@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "librepaper-wasm-helpers"
+name = "wasm-helpers"
 version = "0.1.0"

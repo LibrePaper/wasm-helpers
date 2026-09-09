@@ -1,4 +1,4 @@
-# librepaper-wasm-helpers
+# wasm-helpers
 
 What every [LibrePaper](https://github.com/LibrePaper) renderer shares: the page
 a document is stored as, the shape a compile answers in, the word diff, and the
@@ -8,10 +8,10 @@ This crate builds no WebAssembly of its own. It is linked into the renderers,
 which do:
 
 ```
-librepaper-wasm-helpers
-  ├── librepaper-wasm-markdown       → markdown.wasm
-  │     └── librepaper-wasm-bibliography → bibliography.wasm, citations.wasm
-  └── librepaper-wasm-typst          → typst.wasm
+wasm-helpers
+  ├── wasm-markdown       → markdown.wasm
+  │     └── wasm-bibliography → bibliography.wasm, citations.wasm
+  └── wasm-typst          → typst.wasm
 ```
 
 ## Why it exists

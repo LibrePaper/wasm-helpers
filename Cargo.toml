@@ -2,12 +2,15 @@
 # document is stored as, the shape a compile answers in, the word diff, and the
 # WebAssembly interface itself.
 [package]
-name = "librepaper-wasm-helpers"
+name = "wasm-helpers"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
+# Never goes to crates.io: these are consumed by path while the repositories
+# sit side by side, and by git tag once they are pushed.
+publish = false
 description = "The shared page template, diagnostics and WebAssembly interface behind the LibrePaper renderers"
-repository = "https://github.com/LibrePaper/librepaper-wasm-helpers"
+repository = "https://github.com/LibrePaper/wasm-helpers"
 
 [lib]
 # An rlib and nothing else: this crate exports no WebAssembly of its own. It is
