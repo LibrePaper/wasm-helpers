@@ -47,13 +47,13 @@ a serialiser, and the same taste applies.
 | `abi` | the interface, minus the exports themselves: the buffers, the file map, the date, the word diff |
 | `diagnostic` | `Compiled`, `Diagnostic`, `Severity`, and the page shown where a document would be |
 | `page` | the standalone HTML page a document is stored as, and `document.css` |
-| `text` | the word diff, vendored from the application repository |
+| `text` | the word diff and three-way merge used by the browser and application |
 
-`src/text.rs` is a verbatim copy of `crates/text/src/lib.rs` upstream. The
-editor's history panel asks a module for the same diff the native side
-computes, so the two must tokenise identically; keeping it verbatim — `merge`
-comes along unused — means a diff against upstream is empty and drift is
-visible at a glance. Changes belong upstream first.
+`src/text.rs` is the canonical implementation. The editor's history panel and
+the native application both call it, so they tokenise and merge identically.
+The pure merge fuzz target lives under `fuzz/` beside this implementation.
+Run it with `make fuzz FUZZ_SECONDS=60` after installing a nightly Rust
+toolchain and `cargo-fuzz`. CI runs it briefly on each push and pull request.
 
 ## Licence
 
