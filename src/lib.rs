@@ -21,7 +21,7 @@ pub mod abi;
 pub mod diagnostic;
 pub mod page;
 
-/// The word diff, vendored from the LibrePaper application repository so that
-/// this side and the native side compute the same one. Only `diff` is reached
-/// from [`abi`]; the rest comes along so that a diff against upstream is empty.
+/// The word diff and the three-way merge. Both sides compile this: the browser
+/// modules through [`abi::word_diff`], and the application natively for `sync`
+/// and the room. One copy, so they cannot tokenise differently.
 pub mod text;

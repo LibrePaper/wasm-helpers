@@ -1,14 +1,11 @@
-//! The word diff, vendored from the LibrePaper application repository.
-//!
-//! Upstream is `crates/text/src/lib.rs` in LibrePaper/librepaper, whose `diff`
-//! is what the native side computes. The editor's history panel asks a module
-//! for the same diff over the same tokens, so the two must agree: this file is
-//! a verbatim copy, and changes belong upstream first. `merge` comes along
-//! unused rather than being carved out, so that a diff against upstream is
-//! empty and drift is visible at a glance.
-
 //! The word diff, and the three-way merge that `librepaper sync` needs when a
 //! text editor saves a buffer that was read before the session moved on.
+//!
+//! This is the only copy. It was duplicated for a while -- once here for the
+//! browser modules and once in the application for the native side -- and kept
+//! in step by a comment, which is exactly as reliable as it sounds: the two
+//! drifted within a day. Both sides compile this file now, so the editor's
+//! history panel and `librepaper sync` cannot tokenise differently.
 //!
 //! A token here is either a maximal run of whitespace or a maximal run of
 //! non-whitespace, and the two alternate. A whitespace run is a token of its
@@ -31,6 +28,8 @@
 //! the engine -- which exports it to the browser for the timeline's per-file
 //! diff -- can both reach it.
 
+#[cfg(test)]
+mod tests;
 
 /// One replacement in the old text: delete `delete` UTF-16 units at `at`, then
 /// insert `insert`. Edits from `diff` are sorted by `at` and never overlap, so
