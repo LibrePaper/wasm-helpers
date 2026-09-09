@@ -1,13 +1,13 @@
-//! The word diff, vendored from the Komodoc application repository.
+//! The word diff, vendored from the LibrePaper application repository.
 //!
-//! Upstream is `crates/text/src/lib.rs` in LibrePaper/komodoc, whose `diff` is
-//! what the native side computes. The editor's history panel asks this module
+//! Upstream is `crates/text/src/lib.rs` in LibrePaper/librepaper, whose `diff`
+//! is what the native side computes. The editor's history panel asks a module
 //! for the same diff over the same tokens, so the two must agree: this file is
 //! a verbatim copy, and changes belong upstream first. `merge` comes along
 //! unused rather than being carved out, so that a diff against upstream is
 //! empty and drift is visible at a glance.
 
-//! The word diff, and the three-way merge that `komodoc sync` needs when a
+//! The word diff, and the three-way merge that `librepaper sync` needs when a
 //! text editor saves a buffer that was read before the session moved on.
 //!
 //! A token here is either a maximal run of whitespace or a maximal run of
@@ -30,6 +30,7 @@
 //! function over three strings, in a crate of its own so that the binary and
 //! the engine -- which exports it to the browser for the timeline's per-file
 //! diff -- can both reach it.
+
 
 /// One replacement in the old text: delete `delete` UTF-16 units at `at`, then
 /// insert `insert`. Edits from `diff` are sorted by `at` and never overlap, so
