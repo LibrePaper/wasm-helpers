@@ -1,0 +1,15 @@
+# What every LibrePaper renderer needs and none of them should own: the page a
+# document is stored as, the shape a compile answers in, the word diff, and the
+# WebAssembly interface itself.
+[package]
+name = "librepaper-wasm-helpers"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "The shared page template, diagnostics and WebAssembly interface behind the LibrePaper renderers"
+repository = "https://github.com/LibrePaper/librepaper-wasm-helpers"
+
+[lib]
+# An rlib and nothing else: this crate exports no WebAssembly of its own. It is
+# linked into the renderers, which do.
+crate-type = ["rlib"]
