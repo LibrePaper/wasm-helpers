@@ -257,6 +257,16 @@ pub fn asset_url(path: &str) -> Option<String> {
     }
 }
 
+/// Forgets what the last compile said. An answer that is not a compile -- a
+/// parsed bibliography, say -- leaves no diagnostics rather than the previous
+/// call's.
+pub fn clear_diagnostics() {
+    unsafe {
+        DIAGNOSTICS = None;
+        SAID = None;
+    }
+}
+
 /// Where the last result starts.
 pub fn output_ptr() -> *const u8 {
     unsafe {
