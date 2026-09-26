@@ -1,0 +1,23 @@
+# Fuzz targets for the pure text algorithms. The application has its own fuzz
+# package for document and path admission; this package keeps merge coverage
+# beside the implementation it exercises.
+[package]
+name = "wasm-helpers-fuzz"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+arbitrary = { version = "1", features = ["derive"] }
+libfuzzer-sys = "0.4"
+wasm-helpers = { path = ".." }
+
+[[bin]]
+name = "merge"
+path = "fuzz_targets/merge.rs"
+test = false
+doc = false
+bench = false
