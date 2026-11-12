@@ -135,3 +135,30 @@ table.ltx_equation,table.ltx_equationgroup,.ltx_eqn_table{width:100%;border:0;ma
 .ltx_marginpar_left,.ltx_marginpar{font-size:.85rem;color:var(--lp-muted)}
 /* adapter: Typst HTML */
 math{font-size:1.05em}math[display=block]{display:block math;margin:1.1rem 0;overflow-x:auto}
+/* adapter: Quarto pages (html.lp-quarto; the Bootstrap theme is removed by the host) */
+.lp-quarto section.level1>h1{font-size:1.45rem;margin-top:2.2rem;padding-bottom:.2rem;border-bottom:1px solid var(--lp-rule)}
+.header-section-number{margin-right:.3em;color:var(--lp-muted);font-weight:400;font-variant-numeric:lining-nums}
+.screen-reader-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#title-block-header{margin:0 0 2.5rem;text-align:center}#title-block-header .title{font-size:2.1rem;line-height:1.2;margin:0 0 .4rem}
+.quarto-title-meta-heading,.code-copy-button,.callout-icon-container,.callout-btn-toggle{display:none}
+.quarto-title-meta-contents p{margin:0 0 .2rem}.quarto-title-meta-author{margin:.8rem 0 .2rem}
+.abstract .block-title{font-variant:small-caps;letter-spacing:.06em;font-weight:600;text-align:center;margin-bottom:.4rem}
+.keywords .block-title,.keywords p{display:inline}.keywords .block-title{font-variant:small-caps;letter-spacing:.04em;color:var(--lp-ink);margin-right:.5em}
+#TOC{margin:0 0 2rem;padding:.8rem 0;border-top:1px solid var(--lp-rule);border-bottom:1px solid var(--lp-rule);font-size:.95rem}
+#toc-title{font:600 1rem var(--lp-serif);font-variant:small-caps;letter-spacing:.06em;border:0;margin:0 0 .4rem}
+#TOC ul{list-style:none;padding-left:0;margin:0}#TOC ul ul{padding-left:1.4rem}#TOC li{margin:.15rem 0}#TOC a{text-decoration:none}#TOC a:hover{text-decoration:underline}
+.callout-header{display:flex}.callout-title-container{font-weight:600;font-variant:small-caps;letter-spacing:.05em;color:var(--c);margin-bottom:.25rem}
+.callout-note{--c:var(--lp-note)}.callout-collapse.collapse{display:block}.callout-body-container>:last-child{margin-bottom:0}
+div.theorem,div.lemma,div.corollary,div.proposition,div.conjecture,div.definition,div.example,div.exercise,div.remark{margin:1.2rem 0}
+div.theorem p,div.lemma p,div.corollary p,div.proposition p,div.conjecture p,div.definition p,div.example p,div.exercise p,div.remark p{margin:0}
+div.theorem,div.lemma,div.corollary,div.proposition,div.conjecture{font-style:italic}.theorem-title{font-style:normal}.theorem-title strong{font-weight:700;font-variant-numeric:lining-nums}.proof-title{font-style:italic}
+figure.quarto-float figcaption{font-size:.9rem;color:var(--lp-muted);margin-top:.5rem;text-align:left}
+figure.quarto-float-tbl{text-align:left;overflow-x:auto}figure.quarto-float figcaption.quarto-float-caption-top{margin:0 0 .4rem}
+a.quarto-xref,a.footnote-ref,.footnote-back{text-decoration:none}a.quarto-xref:hover{text-decoration:underline}
+section.footnotes>h2{font:600 .9rem var(--lp-serif);font-variant:small-caps;letter-spacing:.06em;border:0;margin:0 0 .4rem}
+div.sourceCode{margin:0}.sourceCode .kw,.sourceCode .cf,.sourceCode .im{color:var(--lp-accent)}
+.sourceCode .dt,.sourceCode .dv,.sourceCode .bn,.sourceCode .fl,.sourceCode .cn,.sourceCode .ot{color:var(--lp-important)}
+.sourceCode .st,.sourceCode .ch,.sourceCode .vs,.sourceCode .ss,.sourceCode .sc{color:var(--lp-tip)}
+.sourceCode .co,.sourceCode .do,.sourceCode .an,.sourceCode .in,.sourceCode .wa{color:var(--lp-muted);font-style:italic}.sourceCode .al,.sourceCode .er{color:var(--lp-caution)}
+table.table{margin-bottom:1.1rem}table caption{font-size:.9rem;color:var(--lp-muted);text-align:left;margin-bottom:.4rem}
+.math.display{display:block;overflow-x:auto;margin:1.1rem 0;text-align:center}

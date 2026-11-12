@@ -120,6 +120,7 @@ Kinds: note tip warning important caution. Quiet tint + thin left accent.
 
 ## Adapters
 - LaTeXML: map `ltx_title`, `ltx_authors`/`ltx_personname`/`ltx_role_affiliation`, `ltx_date`, `ltx_abstract`, `ltx_keywords`, `ltx_section`… `ltx_tag` (section numbers), `ltx_figure`/`ltx_table` + `ltx_caption` + `ltx_tag_figure`/`ltx_tag_table`, `ltx_equation`/`ltx_equationgroup` + `ltx_tag_equation`, `ltx_theorem` + `ltx_tag_theorem` / `ltx_font_italic` bodies, `ltx_proof`, `ltx_note`/`ltx_role_footnote`, `ltx_bibliography`/`ltx_bibitem`, `ltx_tabular` (booktabs), `ltx_listing`, `ltx_toclist`.
+- Quarto page (host strips Bootstrap, adds `lp-quarto` to `<html>`): `#title-block-header`, `#TOC`, `.header-section-number`, `.callout-*-container` (icons hidden; collapsed callouts are shown open), `.theorem`/`.proof` + `-title`, `figure.quarto-float`, `a.quarto-xref`, `.sourceCode` token classes (`.kw .st .co …`), `.math.display`.
 - Typst HTML: `figure`/`figcaption`, `math`/`math[display=block]` (MathML), headings start at h2 for level 1, `.typst-*` if any.
 
 ## Notes on the stylesheet
