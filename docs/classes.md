@@ -7,7 +7,7 @@ swaps their own stylesheet for this one). Renderers that write their own markup
 emit the classes below; foreign markup (LaTeXML `ltx_*`, Typst's HTML) is styled
 by adapter sections at the end of the stylesheet, mapping onto the same look.
 
-Design: professional, minimalist, academic. Serif body from a system stack (no
+Design: see `style.md` (house style v2); the summary below predates it where it mentions small caps or Iowan. Serif body from a system stack (no
 webfonts: pages are self-contained) — Charter, "Bitstream Charter", "Iowan Old
 Style", "Source Serif 4", "Source Serif Pro", Georgia, Cambria, serif. Measure
 about 68ch, line height 1.6, restrained heading scale in the same serif
