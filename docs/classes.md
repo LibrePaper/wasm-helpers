@@ -16,7 +16,8 @@ LaTeX-convention theorems, quiet callouts. Monospace: ui-monospace stack.
 
 ## Colours: custom properties only
 Every colour is a variable on `:root` (light defaults): `--lp-ink`, `--lp-muted`,
-`--lp-paper`, `--lp-rule`, `--lp-accent` (links), `--lp-code-bg`, `--lp-code-ink`,
+`--lp-paper` (neutral), `--lp-rule`, `--lp-accent` (links), `--lp-code-bg`, `--lp-code-ink`,
+(`--lp-muted`, `--lp-rule`, `--lp-code-bg` are `color-mix` derivations of `--lp-ink` and `--lp-paper`, so a host that overrides those two gets matching shades),
 `--lp-mark`, and callout tints `--lp-note`, `--lp-tip`, `--lp-warning`,
 `--lp-important`, `--lp-caution`. Dark theme: the same variables redefined under
 `.lp-dark` (a class the host puts on `<html>` in the preview frame, or on an
@@ -106,7 +107,7 @@ Kinds: note tip warning important caution. Quiet tint + thin left accent.
 - Definition lists: `dl > dt, dd`.
 
 ## Code
-- `pre > code` (muted panel). `<div class="code-filename">analysis.R</div>` directly before a `pre`.
+- `pre > code` (lightly tinted panel; Quarto's `div.sourceCode` token classes get a subtle palette). `<div class="code-filename">analysis.R</div>` directly before a `pre`.
 - `<details class="code-fold"><summary>Code</summary><pre>…</pre></details>`.
 - Cell outputs follow the code panel they belong to, tight above it:
   ```html
@@ -116,7 +117,7 @@ Kinds: note tip warning important caution. Quiet tint + thin left accent.
   <div class="cell-output cell-output-display"><figure class="figure" id="fig-x">…</figure></div>
   <div class="cell-output cell-output-display"><table>…</table></div>
   ```
-  `cell-output` (text, `stdout` by default): plain monospace, thin left rule. `cell-output-stderr`, `-warning`, `-message`: tinted with the warning accent; `-error`: caution accent. `cell-output-display`: no rule, no padding, so figures and tables look like ordinary ones. `.cell-output-stale` dims any of them. (The existing `lp-cell-output` classes stay as aliases.)
+  `cell-output` (text, `stdout` by default): verbatim console text on the page background, no box, same mono font as the code, `white-space: pre`, scrolling inside the output, left edge aligned with the code text. `cell-output-stderr`, `-warning`, `-message`: the same text with a muted warning-accent left border; `-error`: caution accent. `cell-output-display`: no padding, so figures and tables look like ordinary ones. `.cell-output-stale` dims any of them. Several outputs may sit in a `div.cell-outputs`. (The existing `lp-cell-output` classes stay as aliases.)
 
 ## Adapters
 - LaTeXML: map `ltx_title`, `ltx_authors`/`ltx_personname`/`ltx_role_affiliation`, `ltx_date`, `ltx_abstract`, `ltx_keywords`, `ltx_section`… `ltx_tag` (section numbers), `ltx_figure`/`ltx_table` + `ltx_caption` + `ltx_tag_figure`/`ltx_tag_table`, `ltx_equation`/`ltx_equationgroup` + `ltx_tag_equation`, `ltx_theorem` + `ltx_tag_theorem` / `ltx_font_italic` bodies, `ltx_proof`, `ltx_note`/`ltx_role_footnote`, `ltx_bibliography`/`ltx_bibitem`, `ltx_tabular` (booktabs), `ltx_listing`, `ltx_toclist`.

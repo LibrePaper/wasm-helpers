@@ -3,8 +3,8 @@
 <!-- STYLE begin: copy of document.css; add class lp-dark to <html> for the dark theme -->
 <style>
 /* LibrePaper document stylesheet. Vocabulary: docs/classes.md. No webfonts, no scripts, no URLs. */
-:root{color-scheme:light;--lp-ink:#1f2328;--lp-muted:#5b6169;--lp-paper:#fffefb;--lp-rule:#d9d6cf;--lp-accent:#1f5fa8;--lp-code-bg:#f4f2ed;--lp-code-ink:#2b2f36;--lp-mark:#fff1a8;--lp-note:#2f6db5;--lp-tip:#2b7a4b;--lp-warning:#a86400;--lp-important:#7a45b0;--lp-caution:#b3362d;--lp-serif:Charter,"Bitstream Charter","Iowan Old Style","Source Serif 4","Source Serif Pro",Georgia,Cambria,serif;--lp-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-.lp-dark{color-scheme:dark;--lp-ink:#e6e4df;--lp-muted:#a3a8b0;--lp-paper:#17181b;--lp-rule:#3a3d42;--lp-accent:#8ab4f0;--lp-code-bg:#202226;--lp-code-ink:#d8dbe0;--lp-mark:#5a4d10;--lp-note:#7aa9e6;--lp-tip:#6cc08a;--lp-warning:#e0a043;--lp-important:#b998e6;--lp-caution:#ef8a82}
+:root{color-scheme:light;--lp-ink:#1a1a1a;--lp-paper:#ffffff;--lp-muted:color-mix(in srgb,var(--lp-ink) 62%,var(--lp-paper));--lp-rule:color-mix(in srgb,var(--lp-ink) 14%,var(--lp-paper));--lp-accent:#1f5fa8;--lp-code-bg:color-mix(in srgb,var(--lp-ink) 4%,var(--lp-paper));--lp-code-ink:var(--lp-ink);--lp-mark:#fff1a8;--lp-note:#2f6db5;--lp-tip:#2b7a4b;--lp-warning:#a86400;--lp-important:#7a45b0;--lp-caution:#b3362d;--lp-serif:Charter,"Bitstream Charter","Iowan Old Style","Source Serif 4","Source Serif Pro",Georgia,Cambria,serif;--lp-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.lp-dark{color-scheme:dark;--lp-ink:#e8e8e8;--lp-paper:#181818;--lp-muted:color-mix(in srgb,var(--lp-ink) 62%,var(--lp-paper));--lp-rule:color-mix(in srgb,var(--lp-ink) 14%,var(--lp-paper));--lp-accent:#8ab4f0;--lp-code-bg:color-mix(in srgb,var(--lp-ink) 6%,var(--lp-paper));--lp-code-ink:var(--lp-ink);--lp-mark:#5a4d10;--lp-note:#7aa9e6;--lp-tip:#6cc08a;--lp-warning:#e0a043;--lp-important:#b998e6;--lp-caution:#ef8a82}
 body{max-width:68ch;margin:3.5rem auto;padding:0 1.25rem 4rem;background:var(--lp-paper);color:var(--lp-ink);font:1.0625rem/1.6 var(--lp-serif);font-variant-numeric:oldstyle-nums;text-wrap:pretty;overflow-wrap:break-word}
 h1,h2,h3,h4,h5,h6{line-height:1.25;font-weight:600;margin:2.2rem 0 .7rem;text-wrap:balance}
 h1{font-size:1.9rem;margin-top:0}h2{font-size:1.45rem}h3{font-size:1.2rem}h4{font-size:1.05rem}
@@ -27,16 +27,20 @@ kbd{font:.85em var(--lp-mono);padding:.05em .4em;border:1px solid var(--lp-rule)
 dl dt{font-weight:600;margin-top:.7rem}dl dd{margin:0 0 .3rem 1.5rem}
 /* code */
 code,samp{font:.88em var(--lp-mono);background:var(--lp-code-bg);color:var(--lp-code-ink);padding:.08em .3em;border-radius:3px}
-pre{background:var(--lp-code-bg);color:var(--lp-code-ink);border-radius:4px;padding:.8rem 1rem;overflow-x:auto;font:.85rem/1.5 var(--lp-mono)}
-pre code{background:none;padding:0;font:inherit}
-.code-filename{font:.78rem var(--lp-mono);color:var(--lp-muted);background:var(--lp-code-bg);border-bottom:1px solid var(--lp-rule);border-radius:4px 4px 0 0;padding:.35rem 1rem;margin:0}
-.code-filename+pre{border-radius:0 0 4px 4px;margin-top:0;padding-top:.7rem}
+pre{background:var(--lp-code-bg);color:var(--lp-code-ink);border-radius:4px;padding:.6rem .85rem;overflow-x:auto;font:400 .875rem/1.5 var(--lp-mono);letter-spacing:normal}
+pre code{background:none;padding:0;border-radius:0;font:inherit;letter-spacing:inherit}
+.code-filename{font:.78rem var(--lp-mono);color:var(--lp-muted);background:var(--lp-code-bg);border-bottom:1px solid var(--lp-rule);border-radius:4px 4px 0 0;padding:.35rem .85rem;margin:0}
+.code-filename+pre{border-radius:0 0 4px 4px;margin-top:0;padding-top:.5rem}
 .code-fold>summary{cursor:pointer;color:var(--lp-muted);font:.85rem var(--lp-mono);margin-bottom:.4rem}
-.cell-output,.lp-cell-output{--c:var(--lp-rule);margin:-.4rem 0 1.1rem;padding-left:.8rem;border-left:1px solid var(--c)}
-.cell-output pre,.lp-cell-output pre{background:none;color:var(--lp-ink);border-radius:0;padding:0;margin:0;overflow-x:auto;font:.85rem/1.5 var(--lp-mono)}
-.cell-output-stderr,.cell-output-warning,.cell-output-message,.cell-output-error{--c:var(--lp-warning);padding:.35rem .8rem;background:color-mix(in srgb,var(--c) 7%,transparent)}
-.cell-output-error{--c:var(--lp-caution)}
-.cell-output-display{margin:0;padding:0;border:0}
+/* cell outputs: verbatim console text on the page, aligned with the code text */
+.cell-outputs{min-width:0}pre+.cell-outputs,div.sourceCode+.cell-outputs,details+.cell-outputs{margin-top:-.75rem}
+.cell-output,.lp-cell-output{--c:var(--lp-rule);min-width:0;margin:0 0 .35rem;padding-left:.85rem}
+pre+.cell-output,div.sourceCode+.cell-output,details+.cell-output{margin-top:-.75rem}
+.cell-output:not(:has(+.cell-output)){margin-bottom:1.1rem}
+.cell-output pre,.lp-cell-output pre{background:none;color:inherit;border:0;border-radius:0;padding:0;margin:0;max-width:100%;overflow-x:auto;white-space:pre;font:400 .875rem/1.5 var(--lp-mono);letter-spacing:normal}
+.cell-output-stderr,.cell-output-warning,.cell-output-message,.cell-output-error{--c:color-mix(in srgb,var(--lp-warning) 60%,transparent);border-left:2px solid var(--c);padding-left:calc(.85rem - 2px)}
+.cell-output-error{--c:color-mix(in srgb,var(--lp-caution) 60%,transparent)}
+.cell-output-display{padding:0;border:0}
 .cell-output-stale,.lp-cell-output-stale{opacity:.5}
 /* title block, abstract, toc */
 .title-block{margin:0 0 2.5rem;text-align:center}
@@ -95,7 +99,7 @@ aside.margin{margin:0 0 1.1rem;padding:.4rem 0 .4rem .8rem;border-left:2px solid
 .pagebreak{display:none}
 .video{position:relative;aspect-ratio:16/9;margin:0 0 1.1rem}.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media(max-width:640px){.columns{flex-direction:column}.column{flex-basis:auto!important}.figure-grid{grid-template-columns:1fr}.abstract,.keywords{margin-left:0;margin-right:0}.equation{flex-direction:column;align-items:stretch}.equation-number{text-align:right}}
-@media print{:root,.lp-dark{color-scheme:light;--lp-ink:#1f2328;--lp-muted:#5b6169;--lp-paper:#fffefb;--lp-rule:#d9d6cf;--lp-accent:#1f5fa8;--lp-code-bg:#f4f2ed;--lp-code-ink:#2b2f36;--lp-mark:#fff1a8;--lp-note:#2f6db5;--lp-tip:#2b7a4b;--lp-warning:#a86400;--lp-important:#7a45b0;--lp-caution:#b3362d}body{max-width:none;margin:0;padding:0;background:#fff;color:#000}.pagebreak{display:block;break-after:page}figure,.theorem,.callout,pre,tr{break-inside:avoid}h1,h2,h3,h4{break-after:avoid}a{color:inherit}aside.margin{float:none;margin:0 0 1rem;width:auto}}
+@media print{:root,.lp-dark{color-scheme:light;--lp-ink:#1a1a1a;--lp-paper:#ffffff;--lp-muted:color-mix(in srgb,var(--lp-ink) 62%,var(--lp-paper));--lp-rule:color-mix(in srgb,var(--lp-ink) 14%,var(--lp-paper));--lp-accent:#1f5fa8;--lp-code-bg:color-mix(in srgb,var(--lp-ink) 4%,var(--lp-paper));--lp-code-ink:var(--lp-ink);--lp-mark:#fff1a8;--lp-note:#2f6db5;--lp-tip:#2b7a4b;--lp-warning:#a86400;--lp-important:#7a45b0;--lp-caution:#b3362d}body{max-width:none;margin:0;padding:0;background:#fff;color:#000}.pagebreak{display:block;break-after:page}figure,.theorem,.callout,pre,tr{break-inside:avoid}h1,h2,h3,h4{break-after:avoid}a{color:inherit}aside.margin{float:none;margin:0 0 1rem;width:auto}}
 /* adapter: LaTeXML */
 .ltx_page_main{margin:0;padding:0}.ltx_page_logo,.ltx_page_footer,.ltx_nodisplay,.ltx_rdf{display:none}
 .ltx_title_document{font-size:2.1rem;line-height:1.2;text-align:center;margin:0 0 .6rem}
@@ -160,7 +164,9 @@ figure.quarto-float figcaption{font-size:.9rem;color:var(--lp-muted);margin-top:
 figure.quarto-float-tbl{text-align:left;overflow-x:auto}figure.quarto-float figcaption.quarto-float-caption-top{margin:0 0 .4rem}
 a.quarto-xref,a.footnote-ref,.footnote-back{text-decoration:none}a.quarto-xref:hover{text-decoration:underline}
 section.footnotes>h2{font:600 .9rem var(--lp-serif);font-variant:small-caps;letter-spacing:.06em;border:0;margin:0 0 .4rem}
-div.sourceCode{margin:0}.sourceCode span{color:inherit;font-style:inherit}
+div.sourceCode{margin:0}
+.sourceCode :is(.kw,.cf,.fu,.bu,.pp,.im){color:var(--lp-accent)}.sourceCode :is(.st,.ch,.sc,.ss,.vs){color:var(--lp-tip)}.sourceCode :is(.dv,.bn,.fl,.cn){color:var(--lp-important)}
+.sourceCode :is(.co,.do,.an,.cv,.in){color:var(--lp-muted);font-style:italic}.sourceCode :is(.al,.er){color:var(--lp-caution)}.sourceCode .wa{color:var(--lp-warning)}
 table.table{margin-bottom:1.1rem}table caption{font-size:.9rem;color:var(--lp-muted);text-align:left;margin-bottom:.4rem}
 .math.display{display:block;overflow-x:auto;margin:1.1rem 0;text-align:center}
 </style>
@@ -232,11 +238,26 @@ summary(fit)</code></pre>
             Estimate Std. Error
 x             0.4200     0.0500</code></pre></div>
 <div class="cell-output cell-output-stale"><pre><code>(stale output)</code></pre></div>
-<pre><code class="language-r">summary(x)</code></pre>
+<pre><code class="language-r">summary(x)
+df</code></pre>
+<div class="cell-outputs">
 <div class="cell-output cell-output-stdout"><pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
-   1.00    2.00    3.00    3.00    4.00    5.00</code></pre></div>
+   1.00    2.00    3.00    3.00    4.00    5.00
+
+      statistic value
+1          Mean     5
+2   Sample size     4
+	tab-indented line, a very long line that scrolls inside the output instead of wrapping: 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789 0123456789</code></pre></div>
 <div class="cell-output cell-output-stderr"><pre><code>Warning: NAs introduced by coercion</code></pre></div>
+<div class="cell-output cell-output-message"><pre><code>Loading required package: stats</code></pre></div>
 <div class="cell-output cell-output-error"><pre><code>Error in log(-1): cannot take log of a negative number</code></pre></div>
+</div>
+<p>A paragraph after the outputs keeps the usual gap.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># highlighted code (Quarto adapter)</span>
+<span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> d) <span class="sc">|&gt;</span> <span class="fu">summary</span>()
+<span class="cf">if</span> (n <span class="sc">&gt;</span> <span class="dv">3</span>) <span class="fu">print</span>(<span class="st">"many"</span>) <span class="cf">else</span> <span class="fu">stop</span>(<span class="st">"few"</span>)</code></pre></div>
+<div class="cell-output cell-output-stdout"><pre><code>Call:
+lm(formula = y ~ x, data = d)</code></pre></div>
 <div class="cell-output cell-output-display"><figure class="figure" id="fig-cell"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='160'%3E%3Crect width='400' height='160' fill='%23fff'/%3E%3Cpath d='M10 20 L390 140' fill='none' stroke='%231f5fa8' stroke-width='3'/%3E%3C/svg%3E" alt="A falling line" style="width:60%"><figcaption><span class="caption-label">Figure 3.</span> A plot produced by a cell.</figcaption></figure></div>
 <div class="cell-output cell-output-display"><table><thead><tr><th>Statistic</th><th align="right">Value</th></tr></thead><tbody><tr><td>Mean</td><td align="right">3.00</td></tr><tr><td>SD</td><td align="right">1.58</td></tr></tbody></table></div>
 <details class="code-fold"><summary>Code</summary><pre><code>plot(fit)</code></pre></details>
