@@ -65,7 +65,8 @@ mod tests {
         let out = page("A & B", "", "<p>x</p>");
         assert!(out.starts_with("<!doctype html>"));
         assert!(out.contains("<title>A &amp; B</title>"));
-        assert!(out.contains("max-width: 46rem"));
+        // The house stylesheet is embedded, colours and all.
+        assert!(out.contains("--lp-ink"));
         assert!(!out.contains("<script"));
         assert!(!out.contains("<link rel=\"stylesheet\""));
     }

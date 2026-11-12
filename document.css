@@ -124,7 +124,7 @@ table.ltx_equation,table.ltx_equationgroup,.ltx_eqn_table{width:100%;border:0;ma
 .ltx_theorem .ltx_font_italic,.ltx_theorem .ltx_para{font-style:italic}.ltx_theorem .ltx_title_theorem *{font-style:normal}
 .ltx_proof{margin:.8rem 0 1.2rem}.ltx_proof .ltx_title{display:inline;font:inherit;font-style:italic;border:0;margin:0 .5em 0 0}
 .ltx_proof>.ltx_para:last-child::after{content:"\220E";float:right}
-.ltx_note_content,.ltx_note_type{display:none}.ltx_note_mark{font-size:.75em;vertical-align:super}
+.ltx_note_type,.ltx_note_content>.ltx_note_mark{display:none}.ltx_note_outer{display:inline}.ltx_note_content{display:block;margin:.3rem 0 .5rem;padding-left:.7rem;border-left:1px solid var(--lp-rule);color:var(--lp-muted);font-size:.85em;font-style:normal;text-indent:0}.ltx_note_mark{font-size:.75em;vertical-align:super}
 .ltx_bibliography{margin-top:2rem}.ltx_biblist{list-style:none;padding:0}.ltx_bibitem{margin:0 0 .5rem;padding-left:2em;text-indent:-2em;font-size:.92rem}.ltx_bibtag{margin-right:.5em}
 .ltx_listing,.ltx_verbatim{background:var(--lp-code-bg);color:var(--lp-code-ink);border-radius:4px;padding:.8rem 1rem;overflow-x:auto;font:.85rem/1.5 var(--lp-mono);margin:0 0 1.1rem}
 .ltx_listingline{white-space:pre}
@@ -149,9 +149,9 @@ math{font-size:1.05em}math[display=block]{display:block math;margin:1.1rem 0;ove
 #TOC ul{list-style:none;padding-left:0;margin:0}#TOC ul ul{padding-left:1.4rem}#TOC li{margin:.15rem 0}#TOC a{text-decoration:none}#TOC a:hover{text-decoration:underline}
 .callout-header{display:flex}.callout-title-container{font-weight:600;font-variant:small-caps;letter-spacing:.05em;color:var(--c);margin-bottom:.25rem}
 .callout-note{--c:var(--lp-note)}.callout-collapse.collapse{display:block}.callout-body-container>:last-child{margin-bottom:0}
-div.theorem,div.lemma,div.corollary,div.proposition,div.conjecture,div.definition,div.example,div.exercise,div.remark{margin:1.2rem 0}
-div.theorem p,div.lemma p,div.corollary p,div.proposition p,div.conjecture p,div.definition p,div.example p,div.exercise p,div.remark p{margin:0}
-div.theorem,div.lemma,div.corollary,div.proposition,div.conjecture{font-style:italic}.theorem-title{font-style:normal}.theorem-title strong{font-weight:700;font-variant-numeric:lining-nums}.proof-title{font-style:italic}
+.lp-quarto :is(div.theorem,div.lemma,div.corollary,div.proposition,div.conjecture,div.definition,div.example,div.exercise,div.remark){margin:1.2rem 0}
+.lp-quarto :is(div.theorem,div.lemma,div.corollary,div.proposition,div.conjecture,div.definition,div.example,div.exercise,div.remark) p{margin:0}
+.lp-quarto :is(div.theorem,div.lemma,div.corollary,div.proposition,div.conjecture){font-style:italic}.lp-quarto .theorem-title{font-style:normal}.theorem-title strong{font-weight:700;font-variant-numeric:lining-nums}.proof-title{font-style:italic}
 figure.quarto-float figcaption{font-size:.9rem;color:var(--lp-muted);margin-top:.5rem;text-align:left}
 figure.quarto-float-tbl{text-align:left;overflow-x:auto}figure.quarto-float figcaption.quarto-float-caption-top{margin:0 0 .4rem}
 a.quarto-xref,a.footnote-ref,.footnote-back{text-decoration:none}a.quarto-xref:hover{text-decoration:underline}
