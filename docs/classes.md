@@ -108,7 +108,15 @@ Kinds: note tip warning important caution. Quiet tint + thin left accent.
 ## Code
 - `pre > code` (muted panel). `<div class="code-filename">analysis.R</div>` directly before a `pre`.
 - `<details class="code-fold"><summary>Code</summary><pre>…</pre></details>`.
-- Cell output: `<div class="cell-output">…</div>` (`.cell-output-stale` dims it). (The existing `lp-cell-output` classes stay as aliases.)
+- Cell outputs follow the code panel they belong to, tight above it:
+  ```html
+  <pre><code class="language-r">summary(x)</code></pre>
+  <div class="cell-output cell-output-stdout"><pre><code>   Min. 1st Qu. …</code></pre></div>
+  <div class="cell-output cell-output-stderr"><pre><code>Warning: …</code></pre></div>
+  <div class="cell-output cell-output-display"><figure class="figure" id="fig-x">…</figure></div>
+  <div class="cell-output cell-output-display"><table>…</table></div>
+  ```
+  `cell-output` (text, `stdout` by default): plain monospace, thin left rule. `cell-output-stderr`, `-warning`, `-message`: tinted with the warning accent; `-error`: caution accent. `cell-output-display`: no rule, no padding, so figures and tables look like ordinary ones. `.cell-output-stale` dims any of them. (The existing `lp-cell-output` classes stay as aliases.)
 
 ## Adapters
 - LaTeXML: map `ltx_title`, `ltx_authors`/`ltx_personname`/`ltx_role_affiliation`, `ltx_date`, `ltx_abstract`, `ltx_keywords`, `ltx_section`… `ltx_tag` (section numbers), `ltx_figure`/`ltx_table` + `ltx_caption` + `ltx_tag_figure`/`ltx_tag_table`, `ltx_equation`/`ltx_equationgroup` + `ltx_tag_equation`, `ltx_theorem` + `ltx_tag_theorem` / `ltx_font_italic` bodies, `ltx_proof`, `ltx_note`/`ltx_role_footnote`, `ltx_bibliography`/`ltx_bibitem`, `ltx_tabular` (booktabs), `ltx_listing`, `ltx_toclist`.
