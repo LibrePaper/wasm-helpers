@@ -156,9 +156,6 @@ figure.quarto-float figcaption{font-size:.9rem;color:var(--lp-muted);margin-top:
 figure.quarto-float-tbl{text-align:left;overflow-x:auto}figure.quarto-float figcaption.quarto-float-caption-top{margin:0 0 .4rem}
 a.quarto-xref,a.footnote-ref,.footnote-back{text-decoration:none}a.quarto-xref:hover{text-decoration:underline}
 section.footnotes>h2{font:600 .9rem var(--lp-serif);font-variant:small-caps;letter-spacing:.06em;border:0;margin:0 0 .4rem}
-div.sourceCode{margin:0}.sourceCode .kw,.sourceCode .cf,.sourceCode .im{color:var(--lp-accent)}
-.sourceCode .dt,.sourceCode .dv,.sourceCode .bn,.sourceCode .fl,.sourceCode .cn,.sourceCode .ot{color:var(--lp-important)}
-.sourceCode .st,.sourceCode .ch,.sourceCode .vs,.sourceCode .ss,.sourceCode .sc{color:var(--lp-tip)}
-.sourceCode .co,.sourceCode .do,.sourceCode .an,.sourceCode .in,.sourceCode .wa{color:var(--lp-muted);font-style:italic}.sourceCode .al,.sourceCode .er{color:var(--lp-caution)}
+div.sourceCode{margin:0}.sourceCode span{color:inherit;font-style:inherit}
 table.table{margin-bottom:1.1rem}table caption{font-size:.9rem;color:var(--lp-muted);text-align:left;margin-bottom:.4rem}
 .math.display{display:block;overflow-x:auto;margin:1.1rem 0;text-align:center}
