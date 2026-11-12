@@ -40,7 +40,7 @@ pre code{background:none;padding:0;border-radius:0;font:inherit;letter-spacing:i
 .code-fold>summary{cursor:pointer;color:var(--lp-muted);font:.8rem var(--lp-sans);margin-bottom:.4rem;padding-left:.85rem}
 /* cell outputs: verbatim console text on the page, aligned with the code text */
 .cell-outputs{min-width:0}pre+.cell-outputs,div.sourceCode+.cell-outputs,details+.cell-outputs{margin-top:-.75rem}
-.cell-output,.lp-cell-output{--c:var(--lp-rule);min-width:0;margin:0 0 .35rem;border-left:2px solid var(--c);padding-left:calc(.85rem - 2px)}
+.cell-output,.lp-cell-output{--c:color-mix(in srgb,var(--lp-ink) 28%,var(--lp-paper));min-width:0;margin:0 0 .35rem;border-left:2px solid var(--c);padding-left:calc(.85rem - 2px)}
 pre+.cell-output,div.sourceCode+.cell-output,details+.cell-output{margin-top:-.75rem}
 .cell-output:not(:has(+.cell-output)){margin-bottom:1.1rem}
 .cell-output pre,.lp-cell-output pre{background:none;color:inherit;border:0;border-radius:0;padding:0;margin:0;max-width:100%;overflow-x:auto;white-space:pre;font:400 .875rem/1.5 var(--lp-mono);letter-spacing:normal}
