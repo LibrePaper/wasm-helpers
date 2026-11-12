@@ -39,16 +39,16 @@ dl dt{font-weight:650;margin-top:.9rem}dl dd{margin:.2rem 0 0 1.25rem}
 /* code */
 pre{background:var(--lp-code-bg);color:var(--lp-code-ink);border-radius:4px;padding:.6rem .85rem;overflow-x:auto;font:400 .875rem/1.5 var(--lp-mono);letter-spacing:normal}
 pre code{background:none;padding:0;border-radius:0;font:inherit;letter-spacing:inherit}
-.code-filename{font:.8rem var(--lp-sans);color:var(--lp-muted);background:var(--lp-code-bg);border-bottom:1px solid var(--lp-rule);border-radius:4px 4px 0 0;padding:.35rem .85rem;margin:0}
-.code-filename+pre{border-radius:0 0 4px 4px;margin-top:0;padding-top:.5rem}
-.code-fold>summary{cursor:pointer;color:var(--lp-muted);font:.8rem var(--lp-sans);margin-bottom:.4rem}
+.code-filename{font:.78rem var(--lp-sans);color:var(--lp-muted);background:var(--lp-code-bg);border-radius:4px 4px 0 0;padding:.45rem .85rem 0;margin:0}
+.code-filename+pre{border-radius:0 0 4px 4px;margin-top:0;padding-top:.3rem}
+.code-fold>summary{cursor:pointer;color:var(--lp-muted);font:.8rem var(--lp-sans);margin-bottom:.4rem;padding-left:.85rem}
 /* cell outputs: verbatim console text on the page, aligned with the code text */
 .cell-outputs{min-width:0}pre+.cell-outputs,div.sourceCode+.cell-outputs,details+.cell-outputs{margin-top:-.75rem}
-.cell-output,.lp-cell-output{--c:var(--lp-rule);min-width:0;margin:0 0 .35rem;padding-left:.85rem}
+.cell-output,.lp-cell-output{--c:var(--lp-rule);min-width:0;margin:0 0 .35rem;border-left:2px solid var(--c);padding-left:calc(.85rem - 2px)}
 pre+.cell-output,div.sourceCode+.cell-output,details+.cell-output{margin-top:-.75rem}
 .cell-output:not(:has(+.cell-output)){margin-bottom:1.1rem}
 .cell-output pre,.lp-cell-output pre{background:none;color:inherit;border:0;border-radius:0;padding:0;margin:0;max-width:100%;overflow-x:auto;white-space:pre;font:400 .875rem/1.5 var(--lp-mono);letter-spacing:normal}
-.cell-output-stderr,.cell-output-warning,.cell-output-message,.cell-output-error{--c:color-mix(in srgb,var(--lp-warning) 60%,transparent);border-left:2px solid var(--c);padding-left:calc(.85rem - 2px)}
+.cell-output-stderr,.cell-output-warning,.cell-output-message,.cell-output-error{--c:color-mix(in srgb,var(--lp-warning) 60%,transparent)}
 .cell-output-error{--c:color-mix(in srgb,var(--lp-caution) 60%,transparent)}
 .cell-output-display{padding:0;border:0}
 .cell-output-stale,.lp-cell-output-stale{opacity:.5}
