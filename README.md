@@ -46,7 +46,7 @@ a serialiser, and the same taste applies.
 | --- | --- |
 | `abi` | the interface, minus the exports themselves: the buffers, the file map, the date, the word diff |
 | `diagnostic` | `Compiled`, `Diagnostic`, `Severity`, and the page shown where a document would be |
-| `page` | the standalone HTML page a document is stored as, and `document.css` |
+| `page` | the standalone HTML page a document is stored as, and `document.css`, the one academic stylesheet (serif, booktabs, theorems, callouts, light and dark through `.lp-dark`; vocabulary in `docs/classes.md`, specimen in `docs/specimen.html`) |
 | `text` | the word diff and three-way merge used by the browser and application |
 
 `src/text.rs` is the canonical implementation. The editor's history panel and

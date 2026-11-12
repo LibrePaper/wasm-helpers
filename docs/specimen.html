@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LibrePaper specimen</title>
+<!-- STYLE begin: copy of document.css; add class lp-dark to <html> for the dark theme -->
+<style>
+/* LibrePaper document stylesheet. Vocabulary: docs/classes.md. No webfonts, no scripts, no URLs. */
+:root{color-scheme:light;--lp-ink:#1f2328;--lp-muted:#5b6169;--lp-paper:#fffefb;--lp-rule:#d9d6cf;--lp-accent:#1f5fa8;--lp-code-bg:#f4f2ed;--lp-code-ink:#2b2f36;--lp-mark:#fff1a8;--lp-note:#2f6db5;--lp-tip:#2b7a4b;--lp-warning:#a86400;--lp-important:#7a45b0;--lp-caution:#b3362d;--lp-serif:Charter,"Bitstream Charter","Iowan Old Style","Source Serif 4","Source Serif Pro",Georgia,Cambria,serif;--lp-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.lp-dark{color-scheme:dark;--lp-ink:#e6e4df;--lp-muted:#a3a8b0;--lp-paper:#17181b;--lp-rule:#3a3d42;--lp-accent:#8ab4f0;--lp-code-bg:#202226;--lp-code-ink:#d8dbe0;--lp-mark:#5a4d10;--lp-note:#7aa9e6;--lp-tip:#6cc08a;--lp-warning:#e0a043;--lp-important:#b998e6;--lp-caution:#ef8a82}
+body{max-width:68ch;margin:3.5rem auto;padding:0 1.25rem 4rem;background:var(--lp-paper);color:var(--lp-ink);font:1.0625rem/1.6 var(--lp-serif);font-variant-numeric:oldstyle-nums;text-wrap:pretty;overflow-wrap:break-word}
+h1,h2,h3,h4,h5,h6{line-height:1.25;font-weight:600;margin:2.2rem 0 .7rem;text-wrap:balance}
+h1{font-size:1.9rem;margin-top:0}h2{font-size:1.45rem}h3{font-size:1.2rem}h4{font-size:1.05rem}
+h5,h6{font-size:1rem;font-style:italic}
+h2,h3{padding-bottom:.2rem;border-bottom:1px solid var(--lp-rule)}h3{border:0}
+.section-number{margin-right:.55em;color:var(--lp-muted);font-weight:400;font-variant-numeric:lining-nums}
+.unnumbered .section-number{display:none}
+p,ul,ol,dl,blockquote,table,pre,figure{margin:0 0 1.1rem}
+ul,ol{padding-left:1.5rem}li>p{margin-bottom:.4rem}
+a{color:var(--lp-accent);text-underline-offset:.15em;text-decoration-thickness:1px}
+.crossref{text-decoration:none}.crossref:hover{text-decoration:underline}
+hr{border:0;border-top:1px solid var(--lp-rule);margin:2rem 0}
+img,video{max-width:100%;height:auto}img{background:#fff}
+blockquote{margin-left:0;padding-left:1rem;border-left:2px solid var(--lp-rule);color:var(--lp-muted);font-style:italic}
+sup,sub{line-height:0}
+mark,.mark{background:var(--lp-mark);color:var(--lp-ink);padding:0 .15em}
+.smallcaps{font-variant:small-caps;letter-spacing:.03em}.underline{text-decoration:underline}
+kbd{font:.85em var(--lp-mono);padding:.05em .4em;border:1px solid var(--lp-rule);border-bottom-width:2px;border-radius:3px;background:var(--lp-code-bg)}
+dl dt{font-weight:600;margin-top:.7rem}dl dd{margin:0 0 .3rem 1.5rem}
+/* code */
+code,samp{font:.88em var(--lp-mono);background:var(--lp-code-bg);color:var(--lp-code-ink);padding:.08em .3em;border-radius:3px}
+pre{background:var(--lp-code-bg);color:var(--lp-code-ink);border-radius:4px;padding:.8rem 1rem;overflow-x:auto;font:.85rem/1.5 var(--lp-mono)}
+pre code{background:none;padding:0;font:inherit}
+.code-filename{font:.78rem var(--lp-mono);color:var(--lp-muted);background:var(--lp-code-bg);border-bottom:1px solid var(--lp-rule);border-radius:4px 4px 0 0;padding:.35rem 1rem;margin-bottom:-1.1rem}
+.code-filename+pre{border-radius:0 0 4px 4px;margin-top:0;padding-top:.7rem}
+.code-fold>summary{cursor:pointer;color:var(--lp-muted);font:.85rem var(--lp-mono);margin-bottom:.4rem}
+.cell-output,.lp-cell-output{margin:-.5rem 0 1.1rem;padding-left:1rem;border-left:2px solid var(--lp-rule)}
+.cell-output pre,.lp-cell-output pre{background:none;padding:0 0 0 0;margin:0 0 .5rem}
+.cell-output-stale,.lp-cell-output-stale{opacity:.5}
+/* title block, abstract, toc */
+.title-block{margin:0 0 2.5rem;text-align:center}
+.title-block .title{font-size:2.1rem;line-height:1.2;margin:0 0 .4rem}
+.subtitle{font-size:1.2rem;font-style:italic;color:var(--lp-muted);margin:0 0 1rem}
+.author{font-size:1.1rem;margin:.8rem 0 .2rem}.affiliations,.date,.keywords{font-size:.9rem;color:var(--lp-muted);margin:0 0 .3rem}
+.affiliation{display:inline-block;margin:0 .6em}.affiliation-ref{font-size:.7em;margin-left:.1em}
+.abstract{text-align:left;margin:1.8rem 2rem 1rem;font-size:.95rem;border-top:1px solid var(--lp-rule);border-bottom:1px solid var(--lp-rule);padding:.8rem 0 .2rem}
+.abstract-title{font-variant:small-caps;letter-spacing:.06em;font-weight:600;text-align:center;margin-bottom:.4rem}
+.keywords{text-align:left;margin-left:2rem}.keywords-label{font-variant:small-caps;letter-spacing:.04em;color:var(--lp-ink)}
+.toc{margin:0 0 2rem;padding:.8rem 0;border-top:1px solid var(--lp-rule);border-bottom:1px solid var(--lp-rule);font-size:.95rem}
+.toc-title{font-variant:small-caps;letter-spacing:.06em;font-weight:600;margin:0 0 .4rem}
+.toc ol{list-style:none;padding-left:0;margin:0}.toc ol ol{padding-left:1.4rem}.toc li{margin:.15rem 0}.toc a{text-decoration:none}.toc a:hover{text-decoration:underline}
+/* footnotes */
+.footnote-ref{font-size:.75em}.footnote-ref a{text-decoration:none}
+.footnotes{margin-top:2.5rem;padding-top:.8rem;border-top:1px solid var(--lp-rule);font-size:.88rem;color:var(--lp-muted)}
+.footnotes ol{padding-left:1.3rem;margin:0}.footnotes p{margin:0 0 .3rem}.footnote-backref{text-decoration:none;margin-left:.3em}
+/* figures and tables */
+figure{text-align:center}figure img{display:block;margin:0 auto}
+figcaption{font-size:.9rem;color:var(--lp-muted);margin-top:.5rem;text-align:left}
+.caption-label{font-variant:small-caps;letter-spacing:.04em;font-weight:600;color:var(--lp-ink);margin-right:.2em}
+.figure-grid{display:grid;grid-template-columns:repeat(var(--lp-cols,2),1fr);gap:1rem;align-items:start}
+.figure-grid>figcaption{grid-column:1/-1}.subfigure{margin:0}
+figure.table{text-align:left;overflow-x:auto}figure.table figcaption{margin:0 0 .4rem}
+table{border-collapse:collapse;font-size:.95rem;font-variant-numeric:lining-nums tabular-nums}
+figure.table table,figure.table+table{margin-bottom:.5rem}
+table{border-top:2px solid var(--lp-ink);border-bottom:2px solid var(--lp-ink)}
+th,td{padding:.3rem .8rem;text-align:left;border:0}
+thead th,tr:first-child>th{border-bottom:1px solid var(--lp-ink);font-weight:600}
+td[align=right],th[align=right]{text-align:right}td[align=center],th[align=center]{text-align:center}
+/* equations */
+.equation{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:1.1rem 0;overflow-x:auto}
+.equation>[data-math-style]{flex:1;text-align:center}
+.equation-number{flex:none;text-align:right;font-variant-numeric:lining-nums}
+/* theorems, proofs */
+.theorem{margin:1.2rem 0}.theorem p{margin:0}
+.theorem-thm,.theorem-lem,.theorem-cor,.theorem-prp,.theorem-cnj{font-style:italic}
+.theorem-label{font-weight:700;font-style:normal;font-variant-numeric:lining-nums}.theorem-name{font-style:normal}
+.theorem-rem .theorem-label,.theorem-exm .theorem-label,.theorem-exr .theorem-label{font-weight:600;font-style:italic}
+.proof{margin:.8rem 0 1.2rem}.proof-label{font-style:italic}
+.proof>:last-child::after{content:"\220E";float:right;font-style:normal}
+/* callouts */
+.callout{--c:var(--lp-note);margin:1.3rem 0;padding:.6rem 1rem;border-left:3px solid var(--c);background:color-mix(in srgb,var(--c) 7%,transparent);border-radius:0 3px 3px 0;font-size:.95rem}
+.callout-tip{--c:var(--lp-tip)}.callout-warning{--c:var(--lp-warning)}.callout-important{--c:var(--lp-important)}.callout-caution{--c:var(--lp-caution)}
+.callout-title{font-weight:600;font-variant:small-caps;letter-spacing:.05em;color:var(--c);margin-bottom:.25rem}
+summary.callout-title{cursor:pointer}details.callout:not([open])>.callout-title{margin-bottom:0}
+.callout-body>:last-child{margin-bottom:0}
+.callout-simple .callout-title{font-variant:none;letter-spacing:0}
+.callout-minimal{background:none}.callout-minimal .callout-title{display:none}
+/* layout */
+.columns{display:flex;gap:1.5rem;margin:0 0 1.1rem}.column{min-width:0}.column>:last-child{margin-bottom:0}
+aside.margin{margin:0 0 1.1rem;padding:.4rem 0 .4rem .8rem;border-left:2px solid var(--lp-rule);font-size:.85rem;line-height:1.45;color:var(--lp-muted)}
+@media(min-width:1180px){aside.margin{float:right;clear:right;width:13rem;margin:0 -15rem 1rem 0;padding:0;border:0}}
+.tabset{margin:0 0 1.1rem}.tab{margin-bottom:.5rem}
+.tab-title{font:600 .78rem var(--lp-serif);font-variant:small-caps;letter-spacing:.06em;color:var(--lp-muted);margin:0 0 .3rem;border-bottom:1px solid var(--lp-rule)}
+.pagebreak{display:none}
+.video{position:relative;aspect-ratio:16/9;margin:0 0 1.1rem}.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:640px){.columns{flex-direction:column}.column{flex-basis:auto!important}.figure-grid{grid-template-columns:1fr}.abstract,.keywords{margin-left:0;margin-right:0}.equation{flex-direction:column;align-items:stretch}.equation-number{text-align:right}}
+@media print{body{max-width:none;margin:0;padding:0;background:#fff;color:#000}.pagebreak{display:block;break-after:page}figure,.theorem,.callout,pre,tr{break-inside:avoid}h1,h2,h3,h4{break-after:avoid}a{color:inherit}aside.margin{float:none;margin:0 0 1rem;width:auto}}
+/* adapter: LaTeXML */
+.ltx_page_main{margin:0;padding:0}.ltx_page_logo,.ltx_page_footer,.ltx_nodisplay,.ltx_rdf{display:none}
+.ltx_title_document{font-size:2.1rem;line-height:1.2;text-align:center;margin:0 0 .6rem}
+.ltx_authors{text-align:center;margin:.8rem 0;font-size:1.05rem}.ltx_creator{display:block}
+.ltx_personname{display:block}.ltx_role_affiliation,.ltx_contact,.ltx_dates,.ltx_date{display:block;font-size:.9rem;color:var(--lp-muted)}
+.ltx_abstract{margin:1.8rem 2rem 1rem;font-size:.95rem;border-top:1px solid var(--lp-rule);border-bottom:1px solid var(--lp-rule);padding:.8rem 0 .2rem}
+.ltx_title_abstract,.ltx_title_keywords,.ltx_title_acknowledgements{font:inherit;font-style:normal;font-weight:600;font-variant:small-caps;letter-spacing:.06em;text-align:center;border:0;margin:0 0 .4rem}
+.ltx_keywords{margin:0 2rem 1rem;font-size:.9rem;color:var(--lp-muted)}
+.ltx_title_section,.ltx_title_appendix,.ltx_title_bibliography{font-size:1.45rem;border-bottom:1px solid var(--lp-rule);padding-bottom:.2rem}
+.ltx_title_subsection{font-size:1.2rem}.ltx_title_subsubsection{font-size:1.05rem}
+.ltx_title_paragraph,.ltx_title_subparagraph{font-size:1rem;font-style:italic;display:inline;margin:0 .5em 0 0}
+.ltx_tag{margin-right:.5em;color:var(--lp-muted);font-weight:400;font-variant-numeric:lining-nums}
+.ltx_title .ltx_tag_section,.ltx_title .ltx_tag_subsection,.ltx_title .ltx_tag_subsubsection,.ltx_title .ltx_tag_appendix{margin-right:.55em}
+.ltx_para{margin:0 0 1.1rem}.ltx_para>.ltx_p{margin:0 0 .6rem}.ltx_p{margin:0 0 1.1rem}
+.ltx_font_italic{font-style:italic}.ltx_font_bold{font-weight:700}.ltx_font_smallcaps{font-variant:small-caps}.ltx_font_typewriter{font-family:var(--lp-mono)}.ltx_font_sansserif{font-family:system-ui,sans-serif}.ltx_font_slanted{font-style:oblique}.ltx_font_upright{font-style:normal}
+.ltx_figure,.ltx_table,.ltx_float{display:block;margin:1.4rem 0;text-align:center}.ltx_table{text-align:left;overflow-x:auto}
+.ltx_flex_figure{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}.ltx_flex_cell{flex:1}
+.ltx_caption{display:block;font-size:.9rem;color:var(--lp-muted);margin-top:.5rem;text-align:left}
+.ltx_tag_figure,.ltx_tag_table{font-variant:small-caps;letter-spacing:.04em;font-weight:600;color:var(--lp-ink);margin-right:.3em}
+.ltx_graphics{max-width:100%;height:auto;background:#fff}
+.ltx_tabular{border-collapse:collapse;border-top:2px solid var(--lp-ink);border-bottom:2px solid var(--lp-ink);font-size:.95rem;margin:0 auto}
+.ltx_td,.ltx_th{padding:.3rem .8rem;border:0}.ltx_th{font-weight:600}
+.ltx_border_t,.ltx_border_tt{border-top:1px solid var(--lp-ink)}.ltx_border_b,.ltx_border_bb{border-bottom:1px solid var(--lp-ink)}
+.ltx_border_l,.ltx_border_r,.ltx_border_ll,.ltx_border_rr{border-left:0;border-right:0}
+.ltx_align_left{text-align:left}.ltx_align_center{text-align:center}.ltx_align_right{text-align:right}
+table.ltx_equation,table.ltx_equationgroup,.ltx_eqn_table{width:100%;border:0;margin:1rem 0;border-collapse:collapse}
+.ltx_equation td,.ltx_eqn_cell{border:0;padding:.2rem 0}.ltx_eqn_eqno,.ltx_tag_equation{text-align:right;margin:0;color:var(--lp-ink);white-space:nowrap}
+.ltx_theorem{margin:1.2rem 0}.ltx_theorem .ltx_para{margin:0}
+.ltx_theorem .ltx_title_theorem{display:inline;font:inherit;font-weight:700;border:0;margin:0 .5em 0 0}.ltx_theorem .ltx_tag_theorem{color:var(--lp-ink);margin:0}
+.ltx_theorem .ltx_font_italic,.ltx_theorem .ltx_para{font-style:italic}.ltx_theorem .ltx_title_theorem *{font-style:normal}
+.ltx_proof{margin:.8rem 0 1.2rem}.ltx_proof .ltx_title{display:inline;font:inherit;font-style:italic;border:0;margin:0 .5em 0 0}
+.ltx_proof>.ltx_para:last-child::after{content:"\220E";float:right}
+.ltx_note_content,.ltx_note_type{display:none}.ltx_note_mark{font-size:.75em;vertical-align:super}
+.ltx_bibliography{margin-top:2rem}.ltx_biblist{list-style:none;padding:0}.ltx_bibitem{margin:0 0 .5rem;padding-left:2em;text-indent:-2em;font-size:.92rem}.ltx_bibtag{margin-right:.5em}
+.ltx_listing,.ltx_verbatim{background:var(--lp-code-bg);color:var(--lp-code-ink);border-radius:4px;padding:.8rem 1rem;overflow-x:auto;font:.85rem/1.5 var(--lp-mono);margin:0 0 1.1rem}
+.ltx_listingline{white-space:pre}
+.ltx_toclist{list-style:none;padding-left:0}.ltx_toclist .ltx_toclist{padding-left:1.4rem}.ltx_tocentry{margin:.15rem 0}
+.ltx_itemize,.ltx_enumerate,.ltx_description{padding-left:1.5rem}.ltx_item{margin:.2rem 0}
+.ltx_quote{margin-left:0;padding-left:1rem;border-left:2px solid var(--lp-rule);color:var(--lp-muted)}
+.ltx_ref{text-decoration:none}.ltx_ERROR{color:var(--lp-caution)}
+.ltx_marginpar_left,.ltx_marginpar{font-size:.85rem;color:var(--lp-muted)}
+/* adapter: Typst HTML */
+math{font-size:1.05em}math[display=block]{display:block;text-align:center;margin:1.1rem 0;overflow-x:auto}
+</style>
+<!-- STYLE end -->
+</head><body>
+<header class="title-block">
+<h1 class="title">Sparse Estimation of Marginal Effects</h1>
+<p class="subtitle">A specimen of the LibrePaper document style</p>
+<p class="author">Ada Lovelace<sup class="affiliation-ref">1</sup>, Charles Babbage<sup class="affiliation-ref">2</sup></p>
+<p class="affiliations"><span class="affiliation"><sup>1</sup> Universit&eacute; de Montr&eacute;al</span><span class="affiliation"><sup>2</sup> University of Cambridge</span></p>
+<p class="date">12 November 2026</p>
+<div class="abstract"><p class="abstract-title">Abstract</p><p>We study the estimation of marginal effects when the number of covariates grows with the sample size. A simple penalised estimator is shown to be consistent, and a simulation confirms the result in finite samples.</p></div>
+<p class="keywords"><span class="keywords-label">Keywords:</span> marginal effects, sparsity, inference</p>
+</header>
+<nav class="toc"><p class="toc-title">Contents</p><ol>
+<li><a href="#sec-intro"><span class="section-number">1</span> Introduction</a></li>
+<li><a href="#sec-method"><span class="section-number">2</span> Method</a><ol><li><a href="#sec-theory"><span class="section-number">2.1</span> Theory</a></li></ol></li>
+<li><a href="#sec-results"><span class="section-number">3</span> Results</a></li>
+<li><a href="#sec-app"><span class="section-number">A</span> Appendix</a></li></ol></nav>
+
+<h2 id="sec-intro"><span class="section-number">1</span> Introduction</h2>
+<p>Marginal effects summarise how an outcome responds to a change in a covariate, as in <a class="crossref" href="#eq-me">Equation 1</a>. Press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to run a cell, see <a class="crossref" href="#fig-one">Figure 1</a> and <a class="crossref" href="#tbl-one">Table 1</a>, and note the <span class="smallcaps">Small Caps</span>, <mark>highlighted</mark> and <span class="underline">underlined</span> text, and inline math <span data-math-style="inline">x_i^2</span>.<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup></p>
+<blockquote><p>The analytical engine weaves algebraical patterns just as the Jacquard loom weaves flowers and leaves.</p></blockquote>
+<aside class="margin">A margin note: it sits in the gutter on wide screens and inline on narrow ones.</aside>
+<p>Definition lists work too:</p>
+<dl><dt>Estimand</dt><dd>The quantity we want to learn.</dd><dt>Estimator</dt><dd>The recipe that produces a number from data.</dd></dl>
+
+<figure class="figure" id="fig-one"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='160'%3E%3Crect width='400' height='160' fill='%23fff'/%3E%3Cpath d='M10 140 L110 90 L210 100 L310 40 L390 20' fill='none' stroke='%231f5fa8' stroke-width='3'/%3E%3C/svg%3E" alt="A rising line" style="width:60%"><figcaption><span class="caption-label">Figure 1.</span> A rising line on a white background.</figcaption></figure>
+<figure class="figure figure-grid" id="fig-grid" style="--lp-cols:2">
+<figure class="subfigure"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23fff'/%3E%3Ccircle cx='100' cy='60' r='40' fill='%23a86400'/%3E%3C/svg%3E" alt="Circle"><figcaption>(a) Circle</figcaption></figure>
+<figure class="subfigure"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23fff'/%3E%3Crect x='60' y='20' width='80' height='80' fill='%232b7a4b'/%3E%3C/svg%3E" alt="Square"><figcaption>(b) Square</figcaption></figure>
+<figcaption><span class="caption-label">Figure 2.</span> Two subfigures in a grid.</figcaption></figure>
+
+<h2 id="sec-method"><span class="section-number">2</span> Method</h2>
+<figure class="table" id="tbl-one"><figcaption><span class="caption-label">Table 1.</span> Estimates by model.</figcaption>
+<table><thead><tr><th>Model</th><th align="right">Estimate</th><th align="right">Std. error</th></tr></thead><tbody><tr><td>OLS</td><td align="right">0.42</td><td align="right">0.05</td></tr><tr><td>Lasso</td><td align="right">0.38</td><td align="right">0.04</td></tr><tr><td>Ridge</td><td align="right">0.40</td><td align="right">0.04</td></tr></tbody></table></figure>
+<div class="equation" id="eq-me"><span data-math-style="display">\frac{\partial E[Y\mid X]}{\partial X_j}</span><span class="equation-number">(1)</span></div>
+
+<h3 id="sec-theory"><span class="section-number">2.1</span> Theory</h3>
+<div class="theorem theorem-def" id="def-sparse"><p><span class="theorem-label">Definition 1</span> <span class="theorem-name">(Sparsity)</span>. A vector is <em>sparse</em> if few of its entries are nonzero.</p></div>
+<div class="theorem theorem-thm" id="thm-one"><p><span class="theorem-label">Theorem 2</span> <span class="theorem-name">(Consistency)</span>. Under sparsity, the estimator converges in probability to the truth.</p></div>
+<div class="proof"><p><span class="proof-label">Proof.</span> Apply the law of large numbers to each nonzero coordinate and note that the remaining coordinates vanish.</p></div>
+<div class="theorem theorem-lem"><p><span class="theorem-label">Lemma 3</span>. Every lemma is italic.</p></div>
+<div class="theorem theorem-cor"><p><span class="theorem-label">Corollary 4</span>. So is every corollary.</p></div>
+<div class="theorem theorem-prp"><p><span class="theorem-label">Proposition 5</span>. And every proposition.</p></div>
+<div class="theorem theorem-cnj"><p><span class="theorem-label">Conjecture 6</span>. And every conjecture.</p></div>
+<div class="theorem theorem-exm"><p><span class="theorem-label">Example 7</span>. Examples are upright.</p></div>
+<div class="theorem theorem-exr"><p><span class="theorem-label">Exercise 8</span>. Prove the lemma.</p></div>
+<div class="theorem theorem-sol"><p><span class="theorem-label">Solution 8</span>. Left to the reader.</p></div>
+<div class="theorem theorem-rem"><p><span class="theorem-label">Remark 9</span>. Remarks are upright too.</p></div>
+
+<div class="callout callout-note"><div class="callout-title">Note</div><div class="callout-body"><p>A quiet note.</p></div></div>
+<div class="callout callout-tip"><div class="callout-title">Tip</div><div class="callout-body"><p>A helpful tip.</p></div></div>
+<div class="callout callout-warning"><div class="callout-title">Warning</div><div class="callout-body"><p>Mind the gap.</p></div></div>
+<div class="callout callout-important"><div class="callout-title">Important</div><div class="callout-body"><p>Do not skip this.</p></div></div>
+<details class="callout callout-caution"><summary class="callout-title">Caution (collapsed)</summary><div class="callout-body"><p>Hidden until opened.</p></div></details>
+<div class="callout callout-note callout-simple"><div class="callout-title">Simple</div><div class="callout-body"><p>A simple callout.</p></div></div>
+<div class="callout callout-tip callout-minimal"><div class="callout-title">Minimal</div><div class="callout-body"><p>A minimal callout: accent only.</p></div></div>
+
+<div class="columns"><div class="column" style="flex-basis:50%"><p>Left column with some text that flows next to its neighbour.</p></div><div class="column" style="flex-basis:50%"><p>Right column, equally wide, collapsing below on phones.</p></div></div>
+<div class="tabset"><div class="tab"><p class="tab-title">R</p><pre><code>mean(x)</code></pre></div><div class="tab"><p class="tab-title">Python</p><pre><code>x.mean()</code></pre></div></div>
+<div class="video"><iframe title="empty video frame"></iframe></div>
+
+<h2 id="sec-results"><span class="section-number">3</span> Results</h2>
+<div class="code-filename">analysis.R</div>
+<pre><code>fit &lt;- lm(y ~ x, data = d)
+summary(fit)</code></pre>
+<div class="cell-output"><pre><code>Coefficients:
+            Estimate Std. Error
+x             0.4200     0.0500</code></pre></div>
+<div class="cell-output cell-output-stale"><pre><code>(stale output)</code></pre></div>
+<details class="code-fold"><summary>Code</summary><pre><code>plot(fit)</code></pre></details>
+<p>Inline <code>code</code> sits in the text.</p>
+<div class="pagebreak"></div>
+<h2 id="sec-unnum" class="unnumbered"><span class="section-number">&nbsp;</span>Unnumbered section</h2>
+<p>This heading has no number.</p>
+<section class="appendix"><h2 id="sec-app"><span class="section-number">A</span> Appendix</h2><p>Appendix material.</p></section>
+
+<h2 class="unnumbered">A LaTeXML-shaped section</h2>
+<article class="ltx_document">
+<div class="ltx_authors"><span class="ltx_creator ltx_role_author"><span class="ltx_personname">Grace Hopper</span><span class="ltx_role_affiliation">Yale University</span></span></div>
+<div class="ltx_abstract"><h6 class="ltx_title ltx_title_abstract">Abstract</h6><p class="ltx_p">An abstract in LaTeXML markup.</p></div>
+<section class="ltx_section"><h2 class="ltx_title ltx_title_section"><span class="ltx_tag ltx_tag_section">1 </span>Introduction</h2>
+<div class="ltx_para"><p class="ltx_p">Text with a note<span class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup></span> and a theorem.</p></div>
+<div class="ltx_theorem ltx_theorem_theorem"><h6 class="ltx_title ltx_title_theorem"><span class="ltx_tag ltx_tag_theorem">Theorem 1.</span></h6><div class="ltx_para"><p class="ltx_p ltx_font_italic">Every bounded sequence has a convergent subsequence.</p></div></div>
+<div class="ltx_proof"><h6 class="ltx_title ltx_title_proof">Proof.</h6><div class="ltx_para"><p class="ltx_p">Bisect repeatedly.</p></div></div>
+<figure class="ltx_table"><figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_table">Table 2: </span>A LaTeXML table.</figcaption>
+<table class="ltx_tabular"><thead class="ltx_thead"><tr class="ltx_tr"><th class="ltx_td ltx_th ltx_align_left ltx_border_b">Case</th><th class="ltx_td ltx_th ltx_align_right ltx_border_b">Value</th></tr></thead><tbody class="ltx_tbody"><tr class="ltx_tr"><td class="ltx_td ltx_align_left">A</td><td class="ltx_td ltx_align_right">1.0</td></tr></tbody></table></figure>
+</section></article>
+
+<h2>A Typst-shaped section</h2>
+<p>Typst HTML emits plain semantic elements.</p>
+<figure><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='80'%3E%3Crect width='200' height='80' fill='%23fff'/%3E%3C/svg%3E" alt="blank"><figcaption>A Typst figure caption.</figcaption></figure>
+<p>Display math: <math display="block"><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></math></p>
+
+<section class="footnotes"><ol><li id="fn1"><p>A footnote. <a class="footnote-backref" href="#fnref1">&#8617;</a></p></li></ol></section>
+</body></html>

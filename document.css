@@ -1,35 +1,133 @@
-:root { color-scheme: light }
-body {
-  max-width: 46rem;
-  margin: 3rem auto;
-  padding: 0 1.25rem 4rem;
-  background: #fff;
-  color: #1a1d21;
-  font: 16px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-h1, h2, h3, h4, h5, h6 { line-height: 1.25; margin: 2.2rem 0 0.8rem; font-weight: 650 }
-h1 { font-size: 2rem; margin-top: 0 }
-h2 { font-size: 1.5rem }
-h3 { font-size: 1.2rem }
-p, ul, ol, blockquote, table, pre { margin: 0 0 1.1rem }
-a { color: #2f5bd0 }
-code {
-  background: #f2f4f7;
-  border-radius: 4px;
-  padding: 0.1em 0.35em;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.9em;
-}
-pre { background: #f2f4f7; border-radius: 8px; padding: 0.9rem 1rem; overflow-x: auto }
-pre code { background: none; padding: 0 }
-blockquote {
-  margin-left: 0;
-  padding-left: 1rem;
-  border-left: 3px solid #d7dbe2;
-  color: #4a5058;
-}
-table { border-collapse: collapse; width: 100% }
-th, td { border: 1px solid #d7dbe2; padding: 0.45rem 0.7rem; text-align: left }
-th { background: #f7f8fa }
-img { max-width: 100% }
-hr { border: 0; border-top: 1px solid #d7dbe2; margin: 2rem 0 }
+/* LibrePaper document stylesheet. Vocabulary: docs/classes.md. No webfonts, no scripts, no URLs. */
+:root{color-scheme:light;--lp-ink:#1f2328;--lp-muted:#5b6169;--lp-paper:#fffefb;--lp-rule:#d9d6cf;--lp-accent:#1f5fa8;--lp-code-bg:#f4f2ed;--lp-code-ink:#2b2f36;--lp-mark:#fff1a8;--lp-note:#2f6db5;--lp-tip:#2b7a4b;--lp-warning:#a86400;--lp-important:#7a45b0;--lp-caution:#b3362d;--lp-serif:Charter,"Bitstream Charter","Iowan Old Style","Source Serif 4","Source Serif Pro",Georgia,Cambria,serif;--lp-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.lp-dark{color-scheme:dark;--lp-ink:#e6e4df;--lp-muted:#a3a8b0;--lp-paper:#17181b;--lp-rule:#3a3d42;--lp-accent:#8ab4f0;--lp-code-bg:#202226;--lp-code-ink:#d8dbe0;--lp-mark:#5a4d10;--lp-note:#7aa9e6;--lp-tip:#6cc08a;--lp-warning:#e0a043;--lp-important:#b998e6;--lp-caution:#ef8a82}
+body{max-width:68ch;margin:3.5rem auto;padding:0 1.25rem 4rem;background:var(--lp-paper);color:var(--lp-ink);font:1.0625rem/1.6 var(--lp-serif);font-variant-numeric:oldstyle-nums;text-wrap:pretty;overflow-wrap:break-word}
+h1,h2,h3,h4,h5,h6{line-height:1.25;font-weight:600;margin:2.2rem 0 .7rem;text-wrap:balance}
+h1{font-size:1.9rem;margin-top:0}h2{font-size:1.45rem}h3{font-size:1.2rem}h4{font-size:1.05rem}
+h5,h6{font-size:1rem;font-style:italic}
+h2,h3{padding-bottom:.2rem;border-bottom:1px solid var(--lp-rule)}h3{border:0}
+.section-number{margin-right:.55em;color:var(--lp-muted);font-weight:400;font-variant-numeric:lining-nums}
+.unnumbered .section-number{display:none}
+p,ul,ol,dl,blockquote,table,pre,figure{margin:0 0 1.1rem}
+ul,ol{padding-left:1.5rem}li>p{margin-bottom:.4rem}
+a{color:var(--lp-accent);text-underline-offset:.15em;text-decoration-thickness:1px}
+.crossref{text-decoration:none}.crossref:hover{text-decoration:underline}
+hr{border:0;border-top:1px solid var(--lp-rule);margin:2rem 0}
+img,video{max-width:100%;height:auto}img{background:#fff}
+blockquote{margin-left:0;padding-left:1rem;border-left:2px solid var(--lp-rule);color:var(--lp-muted);font-style:italic}
+sup,sub{line-height:0}
+mark,.mark{background:var(--lp-mark);color:var(--lp-ink);padding:0 .15em}
+.smallcaps{font-variant:small-caps;letter-spacing:.03em}.underline{text-decoration:underline}
+kbd{font:.85em var(--lp-mono);padding:.05em .4em;border:1px solid var(--lp-rule);border-bottom-width:2px;border-radius:3px;background:var(--lp-code-bg)}
+dl dt{font-weight:600;margin-top:.7rem}dl dd{margin:0 0 .3rem 1.5rem}
+/* code */
+code,samp{font:.88em var(--lp-mono);background:var(--lp-code-bg);color:var(--lp-code-ink);padding:.08em .3em;border-radius:3px}
+pre{background:var(--lp-code-bg);color:var(--lp-code-ink);border-radius:4px;padding:.8rem 1rem;overflow-x:auto;font:.85rem/1.5 var(--lp-mono)}
+pre code{background:none;padding:0;font:inherit}
+.code-filename{font:.78rem var(--lp-mono);color:var(--lp-muted);background:var(--lp-code-bg);border-bottom:1px solid var(--lp-rule);border-radius:4px 4px 0 0;padding:.35rem 1rem;margin-bottom:-1.1rem}
+.code-filename+pre{border-radius:0 0 4px 4px;margin-top:0;padding-top:.7rem}
+.code-fold>summary{cursor:pointer;color:var(--lp-muted);font:.85rem var(--lp-mono);margin-bottom:.4rem}
+.cell-output,.lp-cell-output{margin:-.5rem 0 1.1rem;padding-left:1rem;border-left:2px solid var(--lp-rule)}
+.cell-output pre,.lp-cell-output pre{background:none;padding:0 0 0 0;margin:0 0 .5rem}
+.cell-output-stale,.lp-cell-output-stale{opacity:.5}
+/* title block, abstract, toc */
+.title-block{margin:0 0 2.5rem;text-align:center}
+.title-block .title{font-size:2.1rem;line-height:1.2;margin:0 0 .4rem}
+.subtitle{font-size:1.2rem;font-style:italic;color:var(--lp-muted);margin:0 0 1rem}
+.author{font-size:1.1rem;margin:.8rem 0 .2rem}.affiliations,.date,.keywords{font-size:.9rem;color:var(--lp-muted);margin:0 0 .3rem}
+.affiliation{display:inline-block;margin:0 .6em}.affiliation-ref{font-size:.7em;margin-left:.1em}
+.abstract{text-align:left;margin:1.8rem 2rem 1rem;font-size:.95rem;border-top:1px solid var(--lp-rule);border-bottom:1px solid var(--lp-rule);padding:.8rem 0 .2rem}
+.abstract-title{font-variant:small-caps;letter-spacing:.06em;font-weight:600;text-align:center;margin-bottom:.4rem}
+.keywords{text-align:left;margin-left:2rem}.keywords-label{font-variant:small-caps;letter-spacing:.04em;color:var(--lp-ink)}
+.toc{margin:0 0 2rem;padding:.8rem 0;border-top:1px solid var(--lp-rule);border-bottom:1px solid var(--lp-rule);font-size:.95rem}
+.toc-title{font-variant:small-caps;letter-spacing:.06em;font-weight:600;margin:0 0 .4rem}
+.toc ol{list-style:none;padding-left:0;margin:0}.toc ol ol{padding-left:1.4rem}.toc li{margin:.15rem 0}.toc a{text-decoration:none}.toc a:hover{text-decoration:underline}
+/* footnotes */
+.footnote-ref{font-size:.75em}.footnote-ref a{text-decoration:none}
+.footnotes{margin-top:2.5rem;padding-top:.8rem;border-top:1px solid var(--lp-rule);font-size:.88rem;color:var(--lp-muted)}
+.footnotes ol{padding-left:1.3rem;margin:0}.footnotes p{margin:0 0 .3rem}.footnote-backref{text-decoration:none;margin-left:.3em}
+/* figures and tables */
+figure{text-align:center}figure img{display:block;margin:0 auto}
+figcaption{font-size:.9rem;color:var(--lp-muted);margin-top:.5rem;text-align:left}
+.caption-label{font-variant:small-caps;letter-spacing:.04em;font-weight:600;color:var(--lp-ink);margin-right:.2em}
+.figure-grid{display:grid;grid-template-columns:repeat(var(--lp-cols,2),1fr);gap:1rem;align-items:start}
+.figure-grid>figcaption{grid-column:1/-1}.subfigure{margin:0}
+figure.table{text-align:left;overflow-x:auto}figure.table figcaption{margin:0 0 .4rem}
+table{border-collapse:collapse;font-size:.95rem;font-variant-numeric:lining-nums tabular-nums}
+figure.table table,figure.table+table{margin-bottom:.5rem}
+table{border-top:2px solid var(--lp-ink);border-bottom:2px solid var(--lp-ink)}
+th,td{padding:.3rem .8rem;text-align:left;border:0}
+thead th,tr:first-child>th{border-bottom:1px solid var(--lp-ink);font-weight:600}
+td[align=right],th[align=right]{text-align:right}td[align=center],th[align=center]{text-align:center}
+/* equations */
+.equation{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:1.1rem 0;overflow-x:auto}
+.equation>[data-math-style]{flex:1;text-align:center}
+.equation-number{flex:none;text-align:right;font-variant-numeric:lining-nums}
+/* theorems, proofs */
+.theorem{margin:1.2rem 0}.theorem p{margin:0}
+.theorem-thm,.theorem-lem,.theorem-cor,.theorem-prp,.theorem-cnj{font-style:italic}
+.theorem-label{font-weight:700;font-style:normal;font-variant-numeric:lining-nums}.theorem-name{font-style:normal}
+.theorem-rem .theorem-label,.theorem-exm .theorem-label,.theorem-exr .theorem-label{font-weight:600;font-style:italic}
+.proof{margin:.8rem 0 1.2rem}.proof-label{font-style:italic}
+.proof>:last-child::after{content:"\220E";float:right;font-style:normal}
+/* callouts */
+.callout{--c:var(--lp-note);margin:1.3rem 0;padding:.6rem 1rem;border-left:3px solid var(--c);background:color-mix(in srgb,var(--c) 7%,transparent);border-radius:0 3px 3px 0;font-size:.95rem}
+.callout-tip{--c:var(--lp-tip)}.callout-warning{--c:var(--lp-warning)}.callout-important{--c:var(--lp-important)}.callout-caution{--c:var(--lp-caution)}
+.callout-title{font-weight:600;font-variant:small-caps;letter-spacing:.05em;color:var(--c);margin-bottom:.25rem}
+summary.callout-title{cursor:pointer}details.callout:not([open])>.callout-title{margin-bottom:0}
+.callout-body>:last-child{margin-bottom:0}
+.callout-simple .callout-title{font-variant:none;letter-spacing:0}
+.callout-minimal{background:none}.callout-minimal .callout-title{display:none}
+/* layout */
+.columns{display:flex;gap:1.5rem;margin:0 0 1.1rem}.column{min-width:0}.column>:last-child{margin-bottom:0}
+aside.margin{margin:0 0 1.1rem;padding:.4rem 0 .4rem .8rem;border-left:2px solid var(--lp-rule);font-size:.85rem;line-height:1.45;color:var(--lp-muted)}
+@media(min-width:1180px){aside.margin{float:right;clear:right;width:13rem;margin:0 -15rem 1rem 0;padding:0;border:0}}
+.tabset{margin:0 0 1.1rem}.tab{margin-bottom:.5rem}
+.tab-title{font:600 .78rem var(--lp-serif);font-variant:small-caps;letter-spacing:.06em;color:var(--lp-muted);margin:0 0 .3rem;border-bottom:1px solid var(--lp-rule)}
+.pagebreak{display:none}
+.video{position:relative;aspect-ratio:16/9;margin:0 0 1.1rem}.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:640px){.columns{flex-direction:column}.column{flex-basis:auto!important}.figure-grid{grid-template-columns:1fr}.abstract,.keywords{margin-left:0;margin-right:0}.equation{flex-direction:column;align-items:stretch}.equation-number{text-align:right}}
+@media print{body{max-width:none;margin:0;padding:0;background:#fff;color:#000}.pagebreak{display:block;break-after:page}figure,.theorem,.callout,pre,tr{break-inside:avoid}h1,h2,h3,h4{break-after:avoid}a{color:inherit}aside.margin{float:none;margin:0 0 1rem;width:auto}}
+/* adapter: LaTeXML */
+.ltx_page_main{margin:0;padding:0}.ltx_page_logo,.ltx_page_footer,.ltx_nodisplay,.ltx_rdf{display:none}
+.ltx_title_document{font-size:2.1rem;line-height:1.2;text-align:center;margin:0 0 .6rem}
+.ltx_authors{text-align:center;margin:.8rem 0;font-size:1.05rem}.ltx_creator{display:block}
+.ltx_personname{display:block}.ltx_role_affiliation,.ltx_contact,.ltx_dates,.ltx_date{display:block;font-size:.9rem;color:var(--lp-muted)}
+.ltx_abstract{margin:1.8rem 2rem 1rem;font-size:.95rem;border-top:1px solid var(--lp-rule);border-bottom:1px solid var(--lp-rule);padding:.8rem 0 .2rem}
+.ltx_title_abstract,.ltx_title_keywords,.ltx_title_acknowledgements{font:inherit;font-style:normal;font-weight:600;font-variant:small-caps;letter-spacing:.06em;text-align:center;border:0;margin:0 0 .4rem}
+.ltx_keywords{margin:0 2rem 1rem;font-size:.9rem;color:var(--lp-muted)}
+.ltx_title_section,.ltx_title_appendix,.ltx_title_bibliography{font-size:1.45rem;border-bottom:1px solid var(--lp-rule);padding-bottom:.2rem}
+.ltx_title_subsection{font-size:1.2rem}.ltx_title_subsubsection{font-size:1.05rem}
+.ltx_title_paragraph,.ltx_title_subparagraph{font-size:1rem;font-style:italic;display:inline;margin:0 .5em 0 0}
+.ltx_tag{margin-right:.5em;color:var(--lp-muted);font-weight:400;font-variant-numeric:lining-nums}
+.ltx_title .ltx_tag_section,.ltx_title .ltx_tag_subsection,.ltx_title .ltx_tag_subsubsection,.ltx_title .ltx_tag_appendix{margin-right:.55em}
+.ltx_para{margin:0 0 1.1rem}.ltx_para>.ltx_p{margin:0 0 .6rem}.ltx_p{margin:0 0 1.1rem}
+.ltx_font_italic{font-style:italic}.ltx_font_bold{font-weight:700}.ltx_font_smallcaps{font-variant:small-caps}.ltx_font_typewriter{font-family:var(--lp-mono)}.ltx_font_sansserif{font-family:system-ui,sans-serif}.ltx_font_slanted{font-style:oblique}.ltx_font_upright{font-style:normal}
+.ltx_figure,.ltx_table,.ltx_float{display:block;margin:1.4rem 0;text-align:center}.ltx_table{text-align:left;overflow-x:auto}
+.ltx_flex_figure{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}.ltx_flex_cell{flex:1}
+.ltx_caption{display:block;font-size:.9rem;color:var(--lp-muted);margin-top:.5rem;text-align:left}
+.ltx_tag_figure,.ltx_tag_table{font-variant:small-caps;letter-spacing:.04em;font-weight:600;color:var(--lp-ink);margin-right:.3em}
+.ltx_graphics{max-width:100%;height:auto;background:#fff}
+.ltx_tabular{border-collapse:collapse;border-top:2px solid var(--lp-ink);border-bottom:2px solid var(--lp-ink);font-size:.95rem;margin:0 auto}
+.ltx_td,.ltx_th{padding:.3rem .8rem;border:0}.ltx_th{font-weight:600}
+.ltx_border_t,.ltx_border_tt{border-top:1px solid var(--lp-ink)}.ltx_border_b,.ltx_border_bb{border-bottom:1px solid var(--lp-ink)}
+.ltx_border_l,.ltx_border_r,.ltx_border_ll,.ltx_border_rr{border-left:0;border-right:0}
+.ltx_align_left{text-align:left}.ltx_align_center{text-align:center}.ltx_align_right{text-align:right}
+table.ltx_equation,table.ltx_equationgroup,.ltx_eqn_table{width:100%;border:0;margin:1rem 0;border-collapse:collapse}
+.ltx_equation td,.ltx_eqn_cell{border:0;padding:.2rem 0}.ltx_eqn_eqno,.ltx_tag_equation{text-align:right;margin:0;color:var(--lp-ink);white-space:nowrap}
+.ltx_theorem{margin:1.2rem 0}.ltx_theorem .ltx_para{margin:0}
+.ltx_theorem .ltx_title_theorem{display:inline;font:inherit;font-weight:700;border:0;margin:0 .5em 0 0}.ltx_theorem .ltx_tag_theorem{color:var(--lp-ink);margin:0}
+.ltx_theorem .ltx_font_italic,.ltx_theorem .ltx_para{font-style:italic}.ltx_theorem .ltx_title_theorem *{font-style:normal}
+.ltx_proof{margin:.8rem 0 1.2rem}.ltx_proof .ltx_title{display:inline;font:inherit;font-style:italic;border:0;margin:0 .5em 0 0}
+.ltx_proof>.ltx_para:last-child::after{content:"\220E";float:right}
+.ltx_note_content,.ltx_note_type{display:none}.ltx_note_mark{font-size:.75em;vertical-align:super}
+.ltx_bibliography{margin-top:2rem}.ltx_biblist{list-style:none;padding:0}.ltx_bibitem{margin:0 0 .5rem;padding-left:2em;text-indent:-2em;font-size:.92rem}.ltx_bibtag{margin-right:.5em}
+.ltx_listing,.ltx_verbatim{background:var(--lp-code-bg);color:var(--lp-code-ink);border-radius:4px;padding:.8rem 1rem;overflow-x:auto;font:.85rem/1.5 var(--lp-mono);margin:0 0 1.1rem}
+.ltx_listingline{white-space:pre}
+.ltx_toclist{list-style:none;padding-left:0}.ltx_toclist .ltx_toclist{padding-left:1.4rem}.ltx_tocentry{margin:.15rem 0}
+.ltx_itemize,.ltx_enumerate,.ltx_description{padding-left:1.5rem}.ltx_item{margin:.2rem 0}
+.ltx_quote{margin-left:0;padding-left:1rem;border-left:2px solid var(--lp-rule);color:var(--lp-muted)}
+.ltx_ref{text-decoration:none}.ltx_ERROR{color:var(--lp-caution)}
+.ltx_marginpar_left,.ltx_marginpar{font-size:.85rem;color:var(--lp-muted)}
+/* adapter: Typst HTML */
+math{font-size:1.05em}math[display=block]{display:block;text-align:center;margin:1.1rem 0;overflow-x:auto}
