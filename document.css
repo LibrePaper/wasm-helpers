@@ -8,6 +8,7 @@ h5,h6{font-size:1rem;font-style:italic}
 h2,h3{padding-bottom:.2rem;border-bottom:1px solid var(--lp-rule)}h3{border:0}
 .section-number{margin-right:.55em;color:var(--lp-muted);font-weight:400;font-variant-numeric:lining-nums}
 .unnumbered .section-number{display:none}
+.section-number[data-number]::before{content:attr(data-number)}
 p,ul,ol,dl,blockquote,table,pre,figure{margin:0 0 1.1rem}
 ul,ol{padding-left:1.5rem}li>p{margin-bottom:.4rem}
 a{color:var(--lp-accent);text-underline-offset:.15em;text-decoration-thickness:1px}
