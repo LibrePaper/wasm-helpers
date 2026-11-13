@@ -3,7 +3,7 @@
 # WebAssembly interface itself.
 [package]
 name = "wasm-helpers"
-version = "0.3.2"
+version = "0.3.3"
 edition = "2021"
 license = "MIT"
 # Never goes to crates.io: these are consumed by path while the repositories
