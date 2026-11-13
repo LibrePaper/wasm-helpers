@@ -215,7 +215,7 @@ table:is(.table-sm,.small){font-size:.85rem}table.table-sm :is(th,td){padding:.2
 .title-block .doi{font:.85rem var(--lp-sans);color:var(--lp-muted);margin:.2rem 0}
 :is(.title-block,#title-block-header) :is(.author,.affiliation) a{color:inherit}
 a.quarto-title-author-email{color:var(--lp-muted);text-decoration:none}a.quarto-title-author-email.corresponding,.quarto-title-author-email.corresponding{color:var(--lp-ink)}
-.lp-icon.lp-icon-envelope{display:inline-block;width:.9em;height:.9em;vertical-align:-.1em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 3.5h13v9h-13z M1.8 4l6.2 5 6.2-5' fill='none' stroke='black' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 3.5h13v9h-13z M1.8 4l6.2 5 6.2-5' fill='none' stroke='black' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.lp-icon.lp-icon-envelope::before{content:"\2709\FE0E";font-size:.95em;line-height:1}
 a.quarto-title-author-orcid{text-decoration:none}a.quarto-title-author-orcid svg.orcid-icon{width:1em;height:1em;vertical-align:-.125em}
 /* appendix */
 section.quarto-appendix-section{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--lp-rule)}
