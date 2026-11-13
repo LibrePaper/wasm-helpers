@@ -75,8 +75,9 @@ figcaption{font:.85rem/1.45 var(--lp-sans);color:var(--lp-muted);margin-top:.6re
 figure.table{text-align:left;overflow-x:auto}figure.table figcaption{margin:0 0 .5rem}
 table{border-collapse:collapse;font-size:.95rem;font-variant-numeric:lining-nums tabular-nums;border-top:1.5px solid color-mix(in srgb,var(--lp-ink) 85%,var(--lp-paper));border-bottom:1.5px solid color-mix(in srgb,var(--lp-ink) 85%,var(--lp-paper))}
 table:not([class*=ltx_]){display:block;width:max-content;max-width:100%;overflow-x:auto;line-height:1.4}
+table:not([class*=ltx_]):has(>colgroup){display:table;width:100%}
 figure.table table,figure.table+table{margin-bottom:.5rem}
-th,td{padding:.45rem .75rem;text-align:left;vertical-align:baseline;border:0;background:none;text-wrap:wrap}
+th,td{padding:.45rem .75rem;text-align:left;vertical-align:baseline;border:0;background:none;text-wrap:wrap;overflow-wrap:break-word;hyphens:auto}
 th{font-family:var(--lp-serif);font-weight:650;color:var(--lp-ink)}thead th{vertical-align:bottom;text-wrap:balance}
 :is(th,td):first-child{padding-left:0}:is(th,td):last-child{padding-right:0}
 thead th,tr:first-child>th{border-bottom:1px solid color-mix(in srgb,var(--lp-ink) 60%,var(--lp-paper))}
@@ -111,7 +112,7 @@ aside.margin{margin:0 0 1em;padding:.4rem 0 .4rem .8rem;border-left:2px solid va
 .pagebreak{display:none}
 .video{position:relative;aspect-ratio:16/9;margin:0 0 1em}.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media(max-width:640px){body{padding:1.5rem 1rem 3rem}.columns{flex-direction:column}.column{flex-basis:auto!important}.figure-grid{grid-template-columns:1fr}.equation{flex-direction:column;align-items:stretch}.equation-number{text-align:right}}
-@media print{body{max-width:none;margin:0;padding:0;background:#fff;color:#000;font-size:11pt;line-height:1.45}.pagebreak{display:block;break-after:page}figure,.theorem,.callout,table,pre,tr{break-inside:avoid}h1,h2,h3,h4{break-after:avoid}a{color:inherit;text-decoration:none}aside.margin{float:none;margin:0 0 1rem;width:auto}table:not([class*=ltx_]){display:table;width:auto;max-width:none;overflow:visible}}
+@media print{body{max-width:none;margin:0;padding:0;background:#fff;color:#000;font-size:11pt;line-height:1.45}.pagebreak{display:block;break-after:page}figure,.theorem,.callout,table,pre,tr{break-inside:avoid}h1,h2,h3,h4{break-after:avoid}a{color:inherit;text-decoration:none}aside.margin{float:none;margin:0 0 1rem;width:auto}table:not([class*=ltx_]){display:table;width:auto;max-width:none;overflow:visible}table:not([class*=ltx_]):has(>colgroup){width:100%}}
 /* adapter: LaTeXML */
 .ltx_page_main{margin:0;padding:0}.ltx_page_logo,.ltx_page_footer,.ltx_nodisplay,.ltx_rdf{display:none}
 .ltx_title_document{font-size:clamp(1.8rem,1.2rem + 2.4vw,2.5rem);line-height:1.12;letter-spacing:-.02em;text-align:left;margin:0 0 .4rem}
