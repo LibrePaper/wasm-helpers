@@ -74,9 +74,10 @@ figcaption{font:.85rem/1.45 var(--lp-sans);color:var(--lp-muted);margin-top:.6re
 .figure-grid>figcaption{grid-column:1/-1}.subfigure{margin:0}
 figure.table{text-align:left;overflow-x:auto}figure.table figcaption{margin:0 0 .5rem}
 table{border-collapse:collapse;font-size:.95rem;font-variant-numeric:lining-nums tabular-nums;border-top:1.5px solid color-mix(in srgb,var(--lp-ink) 85%,var(--lp-paper));border-bottom:1.5px solid color-mix(in srgb,var(--lp-ink) 85%,var(--lp-paper))}
+table:not([class*=ltx_]){display:block;width:max-content;max-width:100%;overflow-x:auto;line-height:1.4}
 figure.table table,figure.table+table{margin-bottom:.5rem}
-th,td{padding:.45rem .75rem;text-align:left;border:0;background:none}
-th{font-family:var(--lp-serif);font-weight:650;color:var(--lp-ink);vertical-align:bottom}
+th,td{padding:.45rem .75rem;text-align:left;vertical-align:baseline;border:0;background:none;text-wrap:wrap}
+th{font-family:var(--lp-serif);font-weight:650;color:var(--lp-ink)}thead th{vertical-align:bottom;text-wrap:balance}
 :is(th,td):first-child{padding-left:0}:is(th,td):last-child{padding-right:0}
 thead th,tr:first-child>th{border-bottom:1px solid color-mix(in srgb,var(--lp-ink) 60%,var(--lp-paper))}
 td[align=right],th[align=right]{text-align:right;white-space:nowrap}td[align=center],th[align=center]{text-align:center}
@@ -110,7 +111,7 @@ aside.margin{margin:0 0 1em;padding:.4rem 0 .4rem .8rem;border-left:2px solid va
 .pagebreak{display:none}
 .video{position:relative;aspect-ratio:16/9;margin:0 0 1em}.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media(max-width:640px){body{padding:1.5rem 1rem 3rem}.columns{flex-direction:column}.column{flex-basis:auto!important}.figure-grid{grid-template-columns:1fr}.equation{flex-direction:column;align-items:stretch}.equation-number{text-align:right}}
-@media print{body{max-width:none;margin:0;padding:0;background:#fff;color:#000;font-size:11pt;line-height:1.45}.pagebreak{display:block;break-after:page}figure,.theorem,.callout,table,pre,tr{break-inside:avoid}h1,h2,h3,h4{break-after:avoid}a{color:inherit;text-decoration:none}aside.margin{float:none;margin:0 0 1rem;width:auto}}
+@media print{body{max-width:none;margin:0;padding:0;background:#fff;color:#000;font-size:11pt;line-height:1.45}.pagebreak{display:block;break-after:page}figure,.theorem,.callout,table,pre,tr{break-inside:avoid}h1,h2,h3,h4{break-after:avoid}a{color:inherit;text-decoration:none}aside.margin{float:none;margin:0 0 1rem;width:auto}table:not([class*=ltx_]){display:table;max-width:none;overflow:visible}}
 /* adapter: LaTeXML */
 .ltx_page_main{margin:0;padding:0}.ltx_page_logo,.ltx_page_footer,.ltx_nodisplay,.ltx_rdf{display:none}
 .ltx_title_document{font-size:clamp(1.8rem,1.2rem + 2.4vw,2.5rem);line-height:1.12;letter-spacing:-.02em;text-align:left;margin:0 0 .4rem}
@@ -131,13 +132,13 @@ aside.margin{margin:0 0 1em;padding:.4rem 0 .4rem .8rem;border-left:2px solid va
 .ltx_caption{display:block;font:.85rem/1.45 var(--lp-sans);color:var(--lp-muted);margin-top:.6rem;text-align:left}
 .ltx_tag_figure,.ltx_tag_table{font-weight:600;color:var(--lp-ink);margin-right:.3em}
 .ltx_graphics{max-width:100%;height:auto;background:#fff}
-.ltx_tabular{border-collapse:collapse;border-top:1.5px solid color-mix(in srgb,var(--lp-ink) 85%,var(--lp-paper));border-bottom:1.5px solid color-mix(in srgb,var(--lp-ink) 85%,var(--lp-paper));font-size:.95rem;margin:0 auto}
-.ltx_td,.ltx_th{padding:.45rem .75rem;border:0}.ltx_th{font-weight:650}
+.ltx_tabular{border-collapse:collapse;line-height:1.4;border-top:1.5px solid color-mix(in srgb,var(--lp-ink) 85%,var(--lp-paper));border-bottom:1.5px solid color-mix(in srgb,var(--lp-ink) 85%,var(--lp-paper));font-size:.95rem;margin:0 auto}
+.ltx_td,.ltx_th{padding:.45rem .75rem;border:0;vertical-align:baseline;text-wrap:wrap}.ltx_th{font-weight:650}
 .ltx_border_t,.ltx_border_tt{border-top:1px solid color-mix(in srgb,var(--lp-ink) 60%,var(--lp-paper))}.ltx_border_b,.ltx_border_bb{border-bottom:1px solid color-mix(in srgb,var(--lp-ink) 60%,var(--lp-paper))}
 .ltx_border_l,.ltx_border_r,.ltx_border_ll,.ltx_border_rr{border-left:0;border-right:0}
 .ltx_align_left{text-align:left}.ltx_align_center{text-align:center}.ltx_align_right{text-align:right}
 table.ltx_equation,table.ltx_equationgroup,.ltx_eqn_table{width:100%;border:0;margin:1.4rem 0;border-collapse:collapse}
-.ltx_equation td,.ltx_eqn_cell{border:0;padding:.2rem 0}.ltx_eqn_eqno,.ltx_tag_equation{text-align:right;margin:0;color:var(--lp-muted);white-space:nowrap;font-variant-numeric:lining-nums tabular-nums}
+.ltx_equation td,.ltx_eqn_cell{border:0;padding:.2rem 0;vertical-align:middle}.ltx_eqn_eqno,.ltx_tag_equation{text-align:right;margin:0;color:var(--lp-muted);white-space:nowrap;font-variant-numeric:lining-nums tabular-nums}
 .ltx_theorem{margin:1.4rem 0}.ltx_theorem .ltx_para{margin:0}
 .ltx_theorem .ltx_title_theorem{display:inline;font:inherit;font-weight:650;border:0;margin:0 .5em 0 0}.ltx_theorem .ltx_tag_theorem{color:var(--lp-ink);margin:0}
 .ltx_theorem .ltx_font_italic,.ltx_theorem .ltx_para{font-style:italic}.ltx_theorem .ltx_title_theorem *{font-style:normal}
