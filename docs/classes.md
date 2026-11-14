@@ -100,6 +100,7 @@ Kinds: note tip warning important caution. Quiet tint + thin left accent.
 - `<div class="pagebreak"></div>` (hidden on screen, page-break in print).
 - `<div class="video"><iframe …></iframe></div>` (16:9 responsive).
 - Definition lists: `dl > dt, dd`.
+- Task lists: `<li class="task task-todo"><input type="checkbox" disabled> …</li>`; the state class is one of `task-todo`, `task-doing`, `task-done` (its input is also `checked`) and `task-cancelled`. The stylesheet draws the box from the class; the input carries no state of its own beyond `checked`.
 
 ## Code
 - `pre > code` (lightly tinted panel; Quarto's `div.sourceCode` token classes get a subtle palette). `<div class="code-filename">analysis.R</div>` directly before a `pre`.
