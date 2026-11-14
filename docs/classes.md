@@ -1,18 +1,13 @@
 # LibrePaper document vocabulary (shared by every format's HTML)
 
-One stylesheet, `wasm-helpers/document.css`, styles every LibrePaper HTML
-document: Markdown, Quarto, Org (embedded by the renderers through
-`wasm_helpers::page()`), and LaTeX (LaTeXML) and Typst HTML (the browser host
-swaps their own stylesheet for this one). Renderers that write their own markup
-emit the classes below; foreign markup (LaTeXML `ltx_*`, Typst's HTML) is styled
-by adapter sections at the end of the stylesheet, mapping onto the same look.
-
-Design: see `style.md` (house style v2); the summary below predates it where it mentions small caps or Iowan. Serif body from a system stack (no
-webfonts: pages are self-contained) — Charter, "Bitstream Charter", "Iowan Old
-Style", "Source Serif 4", "Source Serif Pro", Georgia, Cambria, serif. Measure
-about 68ch, line height 1.6, restrained heading scale in the same serif
-(semibold), hairline rules, booktabs tables, small-caps caption labels,
-LaTeX-convention theorems, quiet callouts. Monospace: ui-monospace stack.
+The LibrePaper app's stylesheet (`web/src/styles/document.css` in the
+LibrePaper repository, with its design notes in `docs/house-style.md` there)
+styles every LibrePaper HTML document: Markdown, Quarto, Org (whose renderers
+emit plain pages through `wasm_helpers::page()`, with no stylesheet), and LaTeX
+(LaTeXML) and Typst HTML (whose own stylesheet the app swaps out). This file is
+the contract between the renderers and that stylesheet: renderers that write
+their own markup emit the classes below; foreign markup (LaTeXML `ltx_*`,
+Typst's HTML) is styled by adapter sections at the end of the stylesheet.
 
 ## Colours: custom properties only
 Every colour is a variable on `:root` (light defaults): `--lp-ink`, `--lp-muted`,
