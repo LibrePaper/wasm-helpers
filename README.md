@@ -46,7 +46,7 @@ a serialiser, and the same taste applies.
 | --- | --- |
 | `abi` | the interface, minus the exports themselves: the buffers, the file map, the date, the word diff |
 | `diagnostic` | `Compiled`, `Diagnostic`, `Severity`, and the page shown where a document would be |
-| `page` | the standalone HTML page a document is stored as, and `document.css`, the one stylesheet (house style v2: modern serif, sans labels, booktabs, theorems, callouts, light and dark through `.lp-dark`; vocabulary in `docs/classes.md`, style in `docs/style.md`, specimen in `docs/specimen.html`) |
+| `page` | the standalone HTML page a document is stored as, as plain structure (no stylesheet: the house style lives in LibrePaper at `web/src/styles/document.css`; the class vocabulary renderers emit is in `docs/classes.md`) |
 | `text` | the word diff and three-way merge used by the browser and application |
 
 `src/text.rs` is the canonical implementation. The editor's history panel and

@@ -129,4 +129,3 @@ Kinds: note tip warning important caution. Quiet tint + thin left accent.
 - The old `lp-cell-output` / `lp-cell-output-stale` names remain as aliases.
 - `.figure-grid` reads `--lp-cols` (default 2); on narrow screens it collapses to one column.
 - `.tabset` is stacked in the stylesheet; a host may enhance it.
-- `docs/specimen.html` exercises every class; it embeds `document.css` between the `STYLE` markers.

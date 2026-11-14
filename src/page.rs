@@ -1,21 +1,16 @@
-//! The page a rendered document is stored as: a plain, readable, self-contained
-//! HTML file with its styles inline, because a published document has to stand
-//! on its own -- no webfonts, no scripts, nothing to fetch.
-
-/// What an HTML document LibrePaper rendered looks like. One file, because
-/// Markdown and authored HTML use this page; Typst documents are paged PDFs
-/// and use the PDF viewer instead.
-pub const DOCUMENT_CSS: &str = include_str!("../document.css");
+//! The page a rendered document is stored as: plain HTML structure, with no
+//! scripts and nothing to fetch. It carries no house stylesheet; the host
+//! (LibrePaper) adds that when it shows the page.
 
 /// Wraps rendered body HTML in the standalone page a document is stored as.
-/// `head` is any renderer-specific stylesheet and goes after the shared sheet.
+/// The page is plain structure; the host adds the house stylesheet. `head` is
+/// any renderer-specific markup (such as a stylesheet) and goes in the head.
 pub fn page(title: &str, head: &str, body: &str) -> String {
     format!(
         "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n\
          <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n\
-         <title>{}</title>\n<style>\n{}</style>\n{}</head>\n<body>\n{}</body>\n</html>\n",
+         <title>{}</title>\n{}</head>\n<body>\n{}</body>\n</html>\n",
         escape(title),
-        DOCUMENT_CSS,
         head,
         body
     )
@@ -61,12 +56,12 @@ mod tests {
     use super::*;
 
     #[test]
-    fn a_page_is_whole_and_self_contained() {
+    fn a_page_is_whole_and_plain() {
         let out = page("A & B", "", "<p>x</p>");
         assert!(out.starts_with("<!doctype html>"));
         assert!(out.contains("<title>A &amp; B</title>"));
-        // The house stylesheet is embedded, colours and all.
-        assert!(out.contains("--lp-ink"));
+        // The host adds the house stylesheet; the page carries none.
+        assert!(!out.contains("<style"));
         assert!(!out.contains("<script"));
         assert!(!out.contains("<link rel=\"stylesheet\""));
     }
