@@ -1,7 +1,7 @@
 # LibrePaper document vocabulary (shared by every format's HTML)
 
 The LibrePaper app's stylesheet (`web/src/styles/document.css` in the
-LibrePaper repository, with its design notes in `docs/house-style.md` there)
+LibrePaper repository, with its design notes in `docs/dev/house-style.md` there)
 styles every LibrePaper HTML document: Markdown, Quarto, Org (whose renderers
 emit plain pages through `wasm_helpers::page()`, with no stylesheet), and LaTeX
 (LaTeXML) and Typst HTML (whose own stylesheet the app swaps out). This file is
